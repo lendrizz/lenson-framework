@@ -1,0 +1,719 @@
+/* ============================================
+   L'ÉTOILE – Fine Dining Demo Template
+   Erstellt von Lenson Consulting
+   ============================================ */
+
+:root {
+    --gold: #C6A86B;
+    --gold-light: #D4B87A;
+    --gold-dark: #A88D52;
+    --black: #0B0B0B;
+    --anthrazit: #1A1A1A;
+    --dark: #111111;
+    --white: #FFFFFF;
+    --gray: #6B7280;
+    --gray-light: #9CA3AF;
+    --border: #2A2A2A;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   ZURÜCK-BUTTON
+   ============================================ */
+.back-to-home {
+    position: fixed;
+    top: 8px;
+    left: 16px;
+    z-index: 3000;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid #000;
+    border-radius: 30px;
+    padding: 6px 16px;
+    transition: all 0.3s ease;
+}
+
+.back-to-home:hover {
+    color: #000;
+    background: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-home i {
+    font-size: 0.85rem;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { 
+    scroll-behavior: smooth; 
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--white);
+    background-color: var(--black);
+    -webkit-font-smoothing: antialiased;
+    padding-top: 0;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; }
+a { color: var(--gold); text-decoration: none; transition: var(--transition); }
+a:hover { color: var(--gold-light); }
+
+/* ============================================
+   DEMO BANNER
+   ============================================ */
+.demo-banner {
+    background: var(--gold);
+    color: var(--black);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+}
+
+.demo-banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.85rem;
+}
+
+.demo-banner-btn {
+    background: var(--black);
+    color: var(--gold) !important;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: var(--transition);
+}
+
+.demo-banner-btn:hover {
+    background: #222;
+    color: var(--gold-light) !important;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+#demoNav {
+    position: fixed;
+    top: 42px;
+    left: 0;
+    right: 0;
+    background: rgba(11, 11, 11, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(198, 168, 107, 0.15);
+    padding: 12px 0;
+    transition: var(--transition);
+    z-index: 1500;
+}
+
+#demoNav.scrolled {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+    padding: 12px 0;
+}
+
+.brand-text {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 4px;
+}
+
+.navbar-toggler { 
+    border: 1px solid rgba(255,255,255,0.3); 
+    padding: 8px 10px; 
+}
+
+.navbar-toggler-icon { 
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.nav-link {
+    color: var(--gray-light) !important;
+    font-weight: 400;
+    font-size: 0.9rem;
+    padding: 8px 16px !important;
+}
+
+.nav-link:hover { color: var(--gold) !important; }
+
+.btn-reservieren {
+    background: var(--gold);
+    color: var(--black) !important;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 2px;
+    font-size: 0.85rem;
+}
+
+.btn-reservieren:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+    font-family: var(--font-body);
+    font-weight: 500;
+    padding: 14px 32px;
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--black) !important;
+    border: none;
+    font-weight: 600;
+}
+
+.btn-gold:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(198, 168, 107, 0.3);
+}
+
+.btn-outline-light {
+    border: 1px solid rgba(255,255,255,0.4);
+    color: var(--white) !important;
+    background: transparent;
+}
+
+.btn-outline-light:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: var(--white);
+}
+
+.section-badge {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 8px 16px;
+    margin-bottom: 24px;
+}
+
+.section-header { margin-bottom: 60px; }
+
+.section-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--gray-light);
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.demo-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url('../assets/images/fine-dining-interior.jpg') center/cover no-repeat;
+    overflow: hidden;
+    padding-top: 120px;
+}
+
+.demo-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(11,11,11,0.92) 0%, rgba(11,11,11,0.7) 50%, rgba(11,11,11,0.88) 100%);
+    z-index: 1;
+}
+
+.demo-hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at 70% 30%, rgba(198, 168, 107, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.hero-content { 
+    position: relative; 
+    z-index: 3; 
+    padding: 40px 0 60px; 
+}
+
+.hero-sterne {
+    display: block;
+    color: var(--gold);
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.demo-hero-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--white);
+}
+
+.demo-hero-title span {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.demo-hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--gray-light);
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.demo-hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    z-index: 3;
+}
+
+.hero-scroll-indicator a {
+    color: var(--gold);
+    font-size: 1.5rem;
+    opacity: 0.7;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* ============================================
+   MENÜ
+   ============================================ */
+/* Menü – Basis-Styles für beide Teile */
+.demo-menu-section {
+    position: relative;
+    padding: 120px 0;
+    background-color: var(--dark);
+}
+
+.demo-menu-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Menü Teil 1 – Vorspeisen & Hauptgänge */
+.demo-menu-section-1 {
+    background: url('../assets/images/fine-dining-menu-bg.jpg') center/cover no-repeat;
+    padding-bottom: 60px;
+}
+
+.demo-menu-section-1::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(17,17,17,0.92) 0%, rgba(17,17,17,0.8) 50%, rgba(17,17,17,0.9) 100%);
+    z-index: 1;
+}
+
+/* Menü Teil 2 – Desserts */
+.demo-menu-section-2 {
+    background: url('../assets/images/fine-dining-dessert-bg.jpg') center/cover no-repeat;
+    padding-top: 0;
+    padding-bottom: 120px;
+}
+
+.demo-menu-section-2::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(17,17,17,0.9) 0%, rgba(17,17,17,0.8) 50%, rgba(17,17,17,0.92) 100%);
+    z-index: 1;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 50px;
+}
+
+.menu-kategorie-title {
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(198, 168, 107, 0.2);
+}
+
+.menu-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.menu-item:last-child { border-bottom: none; }
+
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.menu-item-header h4 {
+    font-size: 1.15rem;
+    color: var(--white);
+}
+
+.menu-preis {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--gold);
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: 16px;
+}
+
+.menu-item p {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.menu-degustation {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 1.1rem;
+    padding: 16px 32px;
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+}
+
+.menu-degustation i { margin-right: 8px; }
+
+/* ============================================
+   WEINKARTE
+   ============================================ */
+.demo-weinkarte-section {
+    position: relative;
+    padding: 120px 0;
+    background: url('../assets/images/fine-dining-wine-bg.jpg') center/cover no-repeat;
+}
+
+.demo-weinkarte-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(11,11,11,0.92) 0%, rgba(11,11,11,0.8) 50%, rgba(11,11,11,0.9) 100%);
+    z-index: 1;
+}
+
+.demo-weinkarte-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.wein-grid {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.wein-item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.wein-jahrgang {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    opacity: 0.5;
+    min-width: 80px;
+}
+
+.wein-info h4 {
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.wein-info p {
+    color: var(--gray);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.wein-preis {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--gold);
+    font-weight: 600;
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.wein-hinweis {
+    color: var(--gray-light);
+    font-size: 0.95rem;
+}
+
+.wein-hinweis i { margin-right: 8px; color: var(--gold); }
+
+/* ============================================
+   PRIVATE DINING
+   ============================================ */
+.demo-private-section {
+    padding: 120px 0;
+    background-color: var(--dark);
+}
+
+.private-text {
+    color: var(--gray-light);
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+    line-height: 1.8;
+}
+
+.private-features {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0;
+}
+
+.private-features li {
+    color: var(--gray-light);
+    padding: 8px 0;
+    font-size: 0.95rem;
+}
+
+.private-features i {
+    color: var(--gold);
+    margin-right: 10px;
+}
+
+.private-image {
+    padding: 20px;
+}
+
+.private-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+/* ============================================
+   RESERVIERUNG
+   ============================================ */
+.demo-reservierung-section {
+    padding: 120px 0;
+    background-color: var(--black);
+}
+
+.reservierung-card {
+    background: var(--anthrazit);
+    border-radius: 12px;
+    padding: 50px;
+    border: 1px solid var(--border);
+}
+
+.reservierung-form .form-label {
+    color: var(--gray-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.reservierung-form .form-control,
+.reservierung-form .form-select {
+    background: var(--black);
+    border: 1px solid var(--border);
+    color: var(--white);
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-family: var(--font-body);
+}
+
+.reservierung-form .form-control:focus,
+.reservierung-form .form-select:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(198, 168, 107, 0.1);
+    outline: none;
+}
+
+.reservierung-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.reservierung-form .form-control::placeholder {
+    color: rgba(255,255,255,0.3);
+}
+
+.reservierung-form .form-select option {
+    background: var(--black);
+    color: var(--white);
+}
+
+.reservierung-info p {
+    color: var(--gray-light);
+    margin-bottom: 8px;
+}
+
+.reservierung-info i {
+    color: var(--gold);
+    margin-right: 8px;
+}
+
+.oeffnungszeiten {
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.demo-footer {
+    background: var(--anthrazit);
+    padding: 80px 0 20px;
+    border-top: 1px solid var(--border);
+}
+
+.footer-brand {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--white);
+    letter-spacing: 4px;
+    margin-bottom: 16px;
+}
+
+.footer-text {
+    color: var(--gray);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.demo-footer h4 {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.social-icons a {
+    color: var(--gray);
+    font-size: 1.3rem;
+    transition: var(--transition);
+}
+
+.social-icons a:hover { color: var(--gold); }
+
+.demo-attribution {
+    text-align: right;
+}
+
+.demo-attribution p {
+    color: var(--gray);
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+}
+
+.lenson-link {
+    font-family: var(--font-display);
+    color: var(--gold) !important;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    line-height: 1.3;
+}
+
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.footer-bottom p {
+    color: var(--gray);
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 992px) {
+    .demo-hero-title { font-size: 2.5rem; }
+    .menu-grid { grid-template-columns: 1fr; gap: 30px; }
+    .wein-item { flex-wrap: wrap; }
+    .wein-jahrgang { min-width: 60px; font-size: 1.5rem; }
+    .wein-preis { margin-left: 0; margin-top: 8px; }
+    .reservierung-card { padding: 30px 20px; }
+    .demo-attribution { text-align: left; margin-top: 20px; }
+    .private-image { margin-top: 40px; }
+    
+    #demoNav { top: 0; }
+    .demo-banner { display: none; }
+    .demo-hero { padding-top: 80px; }
+}
+
+@media (max-width: 768px) {
+    .demo-hero-cta { flex-direction: column; }
+    .demo-hero-cta .btn { width: 100%; text-align: center; margin-left: 0 !important; }
+}

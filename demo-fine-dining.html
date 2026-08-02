@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Étoile – Fine Dining Restaurant | Demo von Lenson Consulting</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Demo CSS -->
+    <link rel="stylesheet" href="css/demo-fine-dining.css">
+</head>
+<body>
+    
+    <!-- Demo-Banner "Powered by Lenson" -->
+    <div class="demo-banner">
+        <div class="container">
+            <div class="demo-banner-content">
+                <span> 🍽️ Demo-Template: Fine Dining – Erstellt von <strong>Lenson Consulting</strong></span>
+                <a href="index.html#kontakt" class="demo-banner-btn">Diese Website kaufen →</a>
+            </div>
+        </div>
+    </div>
+
+<a href="index.html#portfolio" class="back-to-home" title="Zurück zum Portfolio">
+    <i class="bi bi-arrow-left"></i> <span>zurück</span>
+</a>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="demoNav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="brand-text">L'ÉTOILE</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#demoNavContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="demoNavContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menü</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#weinkarte">Weinkarte</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#private">Private Dining</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reservierung">Reservierung</a></li>
+                    <li class="nav-item"><a class="btn btn-reservieren ms-lg-3" href="#reservierung">Tisch buchen</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="demo-hero" class="demo-hero">
+        <div class="demo-hero-overlay"></div>
+        <div class="container">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-7 hero-content">
+                    <span class="hero-sterne">★★★★★</span>
+                    <h1 class="demo-hero-title">
+                        Wo Genuss<br>
+                        zur <span>Kunst</span> wird.
+                    </h1>
+                    <p class="demo-hero-subtitle">
+                        Saisonale Haute Cuisine in exklusivem Ambiente.<br>
+                        Jeden Abend nur 28 Gäste – für ein unvergessliches Erlebnis.
+                    </p>
+                    <div class="demo-hero-cta">
+                        <a href="#reservierung" class="btn btn-gold btn-lg">Tisch reservieren</a>
+                        <a href="#menu" class="btn btn-outline-light btn-lg ms-3">Menü entdecken</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <a href="#menu"><i class="bi bi-chevron-down"></i></a>
+        </div>
+    </section>
+
+        <!-- Menü Section – Teil 1: Vorspeisen & Hauptgänge -->
+    <section id="menu" class="demo-menu-section demo-menu-section-1">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Unsere Küche</span>
+                <h2>Saisonale Kreationen</h2>
+                <p class="section-subtitle">
+                    Küchenchef Alexandre Moreau komponiert täglich<br>
+                    aus den besten Zutaten der Region.
+                </p>
+            </div>
+
+            <div class="menu-grid">
+                <!-- Vorspeisen -->
+                <div class="menu-kategorie">
+                    <h3 class="menu-kategorie-title">Entrées</h3>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4>Tartare de Thon au Caviar</h4>
+                            <span class="menu-preis">32 €</span>
+                        </div>
+                        <p>Thunfischtatar mit Oscietra-Kaviar, Avocadocreme und Zitrus-Vinaigrette</p>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4>Foie Gras Poêlé</h4>
+                            <span class="menu-preis">28 €</span>
+                        </div>
+                        <p>Gebratene Stopfleber mit karamellisierten Feigen, Brioche und Portweinreduktion</p>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4>Velouté de Homard</h4>
+                            <span class="menu-preis">26 €</span>
+                        </div>
+                        <p>Hummercremesuppe mit Trüffelschaum und gerösteten Pinienkernen</p>
+                    </div>
+                </div>
+
+                <!-- Hauptgänge -->
+                <div class="menu-kategorie">
+                    <h3 class="menu-kategorie-title">Plats Principaux</h3>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4>Filet de Bœuf Wagyu</h4>
+                            <span class="menu-preis">58 €</span>
+                        </div>
+                        <p>Wagyu-Rinderfilet mit Trüffelpüree, glasiertem Wurzelgemüse und Rotweinjus</p>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4>Loup de Mer Rôti</h4>
+                            <span class="menu-preis">46 €</span>
+                        </div>
+                        <p>Gebratener Wolfsbarsch mit Safran-Fenchel, Zitronenbeurre blanc und Kräutersalat</p>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4>Risotto aux Truffes</h4>
+                            <span class="menu-preis">38 €</span>
+                        </div>
+                        <p>Trüffelrisotto mit 36-Monate gereiftem Parmesan und schwarzem Périgord-Trüffel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menü Section – Teil 2: Desserts -->
+    <section class="demo-menu-section demo-menu-section-2">
+        <div class="container">
+            <div class="menu-grid">
+                <!-- Desserts -->
+                <div class="menu-kategorie">
+                    <h3 class="menu-kategorie-title">Desserts</h3>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4>Soufflé au Chocolat</h4>
+                            <span class="menu-preis">18 €</span>
+                        </div>
+                        <p>Warmes Schokoladensoufflé mit flüssigem Kern und Vanilleeis</p>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4>Tarte Tatin</h4>
+                            <span class="menu-preis">16 €</span>
+                        </div>
+                        <p>Karamellisierte Apfeltarte mit Calvados-Crème fraîche</p>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4>Assiette de Fromages</h4>
+                            <span class="menu-preis">22 €</span>
+                        </div>
+                        <p>Auswahl französischer Käsespezialitäten mit hausgemachtem Chutney</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-hinweis text-center mt-5">
+                <p class="menu-degustation">
+                    <i class="bi bi-stars"></i> 
+                    <strong>Menu Dégustation</strong> – 6 Gänge | 120 € pro Person | Weinbegleitung + 65 €
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weinkarte Section -->
+    <section id="weinkarte" class="demo-weinkarte-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Weinkeller</span>
+                <h2>Unsere Weinauswahl</h2>
+                <p class="section-subtitle">
+                    Über 300 Positionen – kuratiert von Sommelière<br>
+                    Marie Dubois, Meilleur Sommelier de France 2024.
+                </p>
+            </div>
+
+            <div class="wein-grid">
+                <div class="wein-item">
+                    <div class="wein-jahrgang">2018</div>
+                    <div class="wein-info">
+                        <h4>Château Margaux</h4>
+                        <p>Bordeaux, Frankreich – Eleganz und Finesse mit Noten von schwarzer Johannisbeere</p>
+                    </div>
+                    <div class="wein-preis">280 €</div>
+                </div>
+                
+                <div class="wein-item">
+                    <div class="wein-jahrgang">2020</div>
+                    <div class="wein-info">
+                        <h4>Domaine de la Romanée-Conti</h4>
+                        <p>Burgund, Frankreich – Der Inbegriff von Pinot Noir, komplex und unvergesslich</p>
+                    </div>
+                    <div class="wein-preis">450 €</div>
+                </div>
+                
+                <div class="wein-item">
+                    <div class="wein-jahrgang">2019</div>
+                    <div class="wein-info">
+                        <h4>Sassicaia</h4>
+                        <p>Toskana, Italien – Kraftvoller Super-Tuscan mit samtigen Tanninen</p>
+                    </div>
+                    <div class="wein-preis">195 €</div>
+                </div>
+                
+                <div class="wein-item">
+                    <div class="wein-jahrgang">2021</div>
+                    <div class="wein-info">
+                        <h4>Cloudy Bay Sauvignon Blanc</h4>
+                        <p>Marlborough, Neuseeland – Frisch, lebendig mit tropischen Fruchtnoten</p>
+                    </div>
+                    <div class="wein-preis">75 €</div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <p class="wein-hinweis">
+                    <i class="bi bi-book"></i> 
+                    Unsere vollständige Weinkarte mit über 300 Positionen erhalten Sie vor Ort.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Private Dining Section -->
+    <section id="private" class="demo-private-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="section-badge">Private Dining</span>
+                    <h2>Ihr exklusiver Abend.</h2>
+                    <p class="private-text">
+                        Unser Salon Privé bietet Platz für bis zu 12 Gäste – perfekt für 
+                        Familienfeiern, Geschäftsessen oder besondere Anlässe.
+                    </p>
+                    <p class="private-text">
+                        Auf Wunsch erstellen wir ein individuelles Menü, stimmen die Weine 
+                        persönlich ab und sorgen für einen Abend, der in Erinnerung bleibt.
+                    </p>
+                    <ul class="private-features">
+                        <li><i class="bi bi-check-circle-fill"></i> Exklusiver Raum mit Kamin</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Persönlicher Service</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Individuelle Menügestaltung</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Blumendekoration nach Wunsch</li>
+                    </ul>
+                    <a href="#reservierung" class="btn btn-gold mt-4">Jetzt anfragen</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="private-image">
+                        <div class="private-image">
+    <img src="assets/images/fine-dining-private.jpg" alt="Salon Privé – exklusiver Raum" class="private-img">
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservierung Section -->
+    <section id="reservierung" class="demo-reservierung-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="reservierung-card">
+                        <div class="section-header text-center">
+                            <span class="section-badge">Reservierung</span>
+                            <h2>Ihr Tisch erwartet Sie.</h2>
+                            <p class="section-subtitle">
+                                Reservieren Sie bequem online.<br>
+                                Wir freuen uns auf Ihren Besuch.
+                            </p>
+                        </div>
+
+                        <form class="reservierung-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Datum *</label>
+                                    <input type="date" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Uhrzeit *</label>
+                                    <select class="form-select" required>
+                                        <option value="">Bitte wählen...</option>
+                                        <option>18:00</option>
+                                        <option>18:30</option>
+                                        <option>19:00</option>
+                                        <option>19:30</option>
+                                        <option>20:00</option>
+                                        <option>20:30</option>
+                                        <option>21:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Anzahl Gäste *</label>
+                                    <select class="form-select" required>
+                                        <option value="">Bitte wählen...</option>
+                                        <option>1 Person</option>
+                                        <option>2 Personen</option>
+                                        <option>3 Personen</option>
+                                        <option>4 Personen</option>
+                                        <option>5 Personen</option>
+                                        <option>6 Personen</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Anlass</label>
+                                    <select class="form-select">
+                                        <option value="">Kein besonderer Anlass</option>
+                                        <option>Geburtstag</option>
+                                        <option>Jubiläum</option>
+                                        <option>Geschäftsessen</option>
+                                        <option>Verlobung</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Name *</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">E-Mail *</label>
+                                    <input type="email" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Besondere Wünsche</label>
+                                <textarea class="form-control" rows="3" placeholder="Allergien, besondere Anlässe..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-gold btn-lg w-100">
+                                <i class="bi bi-calendar-check"></i> Reservierung anfragen
+                            </button>
+                        </form>
+
+                        <div class="reservierung-info mt-4 text-center">
+                            <p><i class="bi bi-telephone"></i> Oder rufen Sie uns an: <strong>+49 40 123 4567</strong></p>
+                            <p class="oeffnungszeiten">
+                                <i class="bi bi-clock"></i> 
+                                Dienstag – Samstag: 18:00 – 23:30 Uhr<br>
+                                Sonntag & Montag: Ruhetag
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="demo-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h3 class="footer-brand">L'ÉTOILE</h3>
+                    <p class="footer-text">
+                        Haute Cuisine in exklusivem Ambiente.<br>
+                        Jeden Abend nur 28 Gäste.
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h4>Adresse</h4>
+                    <p class="footer-text">
+                        Musterstraße 42<br>
+                        20355 Hamburg<br>
+                        Deutschland
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h4>Kontakt</h4>
+                    <p class="footer-text">
+                        Tel: +49 40 123 4567<br>
+                        info@letoile-restaurant.de
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h4>Folgen Sie uns</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <div class="demo-attribution">
+                        <p>Template von</p>
+                        <a href="index.html" class="lenson-link">LENSON<br>CONSULTING</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-0">&copy; 2026 L'Étoile – Demo-Template von Lenson Consulting</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

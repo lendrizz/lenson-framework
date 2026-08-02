@@ -1,0 +1,366 @@
+/* ============================================
+   HANA – Sushi & Japanische Küche
+   Minimalistisch, traditionell, puristisch
+   Demo-Template von Lenson Consulting
+   ============================================ */
+
+:root {
+    --white: #FAFAF8;
+    --cream: #F5F0EB;
+    --black: #1A1A1A;
+    --gray: #8C8C88;
+    --gray-light: #BFBFBA;
+    --red: #C13A3A;
+    --red-dark: #9B2E2E;
+    --wood: #C4A882;
+    --wood-light: #D4BFA0;
+    --border: #E5E2DD;
+    --font-jp: 'Noto Serif', 'Times New Roman', serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+    --transition: all 0.3s ease;
+}
+
+/* ============================================
+   ZURÜCK-BUTTON
+   ============================================ */
+.back-to-home {
+    position: fixed;
+    top: 8px;
+    left: 16px;
+    z-index: 3000;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid #000;
+    border-radius: 30px;
+    padding: 6px 16px;
+    transition: all 0.3s ease;
+}
+
+.back-to-home:hover {
+    color: #000;
+    background: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-home i {
+    font-size: 0.85rem;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--black);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-jp); font-weight: 400; line-height: 1.2; color: var(--black); }
+a { color: var(--red); text-decoration: none; transition: var(--transition); }
+a:hover { color: var(--red-dark); }
+
+/* ============================================
+   DEMO BANNER
+   ============================================ */
+.demo-banner {
+    background: var(--black);
+    color: var(--white);
+    padding: 8px 0;
+    z-index: 1060;
+    position: relative;
+}
+.demo-banner-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 0.8rem; }
+.demo-banner-btn { background: var(--white); color: var(--black) !important; padding: 4px 14px; border-radius: 4px; font-weight: 700; font-size: 0.75rem; }
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+#demoNav {
+    background: rgba(250,250,248,0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    top: 36px;
+    z-index: 1000;
+}
+.navbar-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand-jp { font-family: var(--font-jp); font-size: 2rem; color: var(--red); line-height: 1; }
+.brand-name { font-family: var(--font-jp); font-size: 1.4rem; font-weight: 500; color: var(--black); letter-spacing: 3px; }
+.nav-link { color: var(--gray) !important; font-weight: 400; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; }
+.nav-link:hover { color: var(--black) !important; }
+.btn-nav { background: var(--black); color: var(--white) !important; padding: 10px 24px; font-weight: 500; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; transition: var(--transition); }
+.btn-nav:hover { background: var(--red); }
+.navbar-toggler { border: 1px solid var(--gray-light); }
+.navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn-primary {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white) !important;
+    padding: 14px 32px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: var(--transition);
+}
+.btn-primary:hover { background: var(--red); transform: translateY(-1px); }
+
+.btn-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--black) !important;
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 14px 0;
+    transition: var(--transition);
+}
+.btn-text:hover { gap: 14px; color: var(--red) !important; }
+
+.section-tag {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--red);
+    margin-bottom: 12px;
+}
+.section-header { margin-bottom: 60px; }
+.section-header h2 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 8px 0 20px; }
+.section-header p { color: var(--gray); font-size: 1.05rem; max-width: 500px; }
+
+/* ============================================
+   HERO
+   ============================================ */
+.demo-hero { padding: 80px 0 100px; background: var(--white); margin-top: 36px; }
+
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+
+.hero-jp { font-family: var(--font-jp); font-size: 0.9rem; color: var(--red); margin-bottom: 20px; letter-spacing: 1px; }
+
+.hero-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 24px;
+}
+
+.hero-accent {
+    display: block;
+    color: var(--red);
+    font-weight: 400;
+    font-style: italic;
+}
+
+.hero-description {
+    font-size: 1.05rem;
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 32px;
+    max-width: 420px;
+}
+
+.hero-buttons { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+
+.hero-visual { position: relative; }
+.hero-img { width: 100%; border-radius: 4px; }
+
+.hero-stamp {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 70px;
+    height: 70px;
+    background: var(--red);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-jp);
+    font-size: 2rem;
+    box-shadow: 0 8px 24px rgba(193,58,58,0.3);
+}
+
+/* ============================================
+   MENÜ
+   ============================================ */
+.menu-section { padding: 120px 0; background: var(--cream); }
+
+.menu-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; margin-bottom: 60px; }
+
+.menu-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.menu-subtitle {
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-bottom: 24px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    gap: 16px;
+}
+
+.menu-item:last-child { border-bottom: none; }
+
+.menu-item-left { display: flex; flex-direction: column; }
+
+.menu-name { font-family: var(--font-jp); font-size: 1rem; font-weight: 500; }
+.menu-desc { font-size: 0.8rem; color: var(--gray); margin-top: 2px; }
+
+.menu-price {
+    font-size: 0.85rem;
+    color: var(--red);
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.menu-images { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.menu-img { width: 100%; border-radius: 4px; }
+
+/* ============================================
+   OMAKASE
+   ============================================ */
+.omakase-section { padding: 120px 0; background: var(--white); }
+
+.omakase-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    background: var(--cream);
+    padding: 60px;
+    border-radius: 4px;
+}
+
+.omakase-left h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 8px 0 24px; }
+.omakase-text { color: var(--gray); font-size: 1rem; line-height: 1.8; margin-bottom: 16px; }
+
+.omakase-details { display: flex; gap: 40px; margin: 30px 0; }
+.omakase-detail { text-align: center; }
+.omakase-label { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray); }
+.omakase-value { display: block; font-family: var(--font-jp); font-size: 2rem; color: var(--red); }
+
+.omakase-img { width: 100%; border-radius: 4px; }
+
+/* ============================================
+   TEE
+   ============================================ */
+.tee-section { padding: 120px 0; background: var(--white); }
+
+.tee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.tee-img { width: 100%; border-radius: 4px; }
+
+.tee-text h2 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 8px 0 24px; }
+.tee-intro { color: var(--gray); line-height: 1.8; margin-bottom: 30px; }
+
+.tee-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 20px; }
+.tee-item { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.tee-name { font-family: var(--font-jp); font-weight: 500; min-width: 110px; }
+.tee-desc { color: var(--gray); font-size: 0.85rem; flex: 1; }
+.tee-price { font-weight: 500; color: var(--red); white-space: nowrap; }
+
+.tee-hinweis { color: var(--gray); font-size: 0.9rem; font-style: italic; }
+
+/* ============================================
+   INTERIOR
+   ============================================ */
+.interior-section { padding: 0; }
+.interior-full { width: 100%; height: 500px; overflow: hidden; }
+.interior-img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ============================================
+   RESERVIERUNG
+   ============================================ */
+.reservierung-section { padding: 120px 0; background: var(--cream); }
+
+.reservierung-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.reservierung-text h2 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 8px 0 20px; }
+.reservierung-text > p { color: var(--gray); margin-bottom: 30px; }
+
+.reservierung-info { display: flex; flex-direction: column; gap: 16px; }
+.rinfo-item { display: flex; gap: 14px; }
+.rinfo-item i { color: var(--red); margin-top: 3px; }
+.rinfo-item strong { display: block; font-size: 0.85rem; }
+.rinfo-item span { display: block; color: var(--gray); font-size: 0.85rem; }
+
+.reservierung-form-card { background: var(--white); padding: 40px; border-radius: 4px; }
+.reservierung-form .form-label { font-weight: 500; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--black); }
+.reservierung-form .form-control, .reservierung-form .form-select {
+    border: 1px solid var(--border); border-radius: 4px; padding: 12px 16px;
+    font-family: var(--font-body); color: var(--black); background: var(--white);
+}
+.reservierung-form .form-control:focus, .reservierung-form .form-select:focus { border-color: var(--black); box-shadow: none; outline: none; }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.demo-footer { background: var(--black); color: var(--white); padding: 80px 0 20px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 30px; }
+.footer-brand-col h3 { font-family: var(--font-jp); font-size: 1.5rem; font-weight: 400; color: var(--white); letter-spacing: 3px; margin-bottom: 10px; }
+.footer-jp { font-size: 1.6rem; color: var(--red); }
+.footer-brand-col p, .footer-col p { color: var(--gray); font-size: 0.85rem; line-height: 1.8; }
+.demo-footer h4 { font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: var(--red); margin-bottom: 12px; }
+.social-icons { display: flex; gap: 16px; }
+.social-icons a { color: var(--gray); font-size: 1.1rem; }
+.social-icons a:hover { color: var(--white); }
+.footer-attribution p { font-size: 0.7rem; color: var(--gray); margin-bottom: 4px; }
+.lenson-link { font-family: var(--font-jp); color: var(--red) !important; font-size: 0.8rem; letter-spacing: 2px; }
+.footer-bottom { margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.8rem; color: var(--gray); }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 992px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-visual { order: -1; }
+    .menu-layout { grid-template-columns: 1fr; gap: 40px; }
+    .omakase-card { grid-template-columns: 1fr; padding: 30px; }
+    .tee-grid { grid-template-columns: 1fr; }
+    .tee-image { order: -1; }
+    .reservierung-grid { grid-template-columns: 1fr; }
+    .interior-full { height: 300px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    #demoNav { top: 0; }
+    .demo-banner { display: none; }
+    .demo-hero { margin-top: 70px; }
+}
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.5rem; }
+    .hero-buttons { flex-direction: column; align-items: flex-start; }
+    .hero-stamp { width: 50px; height: 50px; font-size: 1.5rem; top: -10px; right: -10px; }
+    .menu-images { grid-template-columns: 1fr; }
+    .omakase-details { gap: 20px; }
+    .footer-grid { grid-template-columns: 1fr; }
+}
