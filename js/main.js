@@ -182,9 +182,55 @@ END:VCARD`;
         URL.revokeObjectURL(url);
     };
 
+    // ============================================
+    // COOKIE BANNER
+    // ============================================
+    const cookieBanner = document.getElementById('cookieBanner');
+    const cookieModal = document.getElementById('cookieModal');
+
+    // Banner anzeigen, wenn noch keine Einwilligung vorhanden ist
+    if (!localStorage.getItem('cookieConsent')) {
+        if (cookieBanner) cookieBanner.classList.add('active');
+    }
+
+    // Alle Cookies akzeptieren
+    window.acceptAllCookies = function() {
+        localStorage.setItem('cookieConsent', 'all');
+        localStorage.setItem('cookieGoogleFonts', 'true');
+        localStorage.setItem('cookieAnalytics', 'true');
+        if (cookieBanner) cookieBanner.classList.remove('active');
+    };
+
+    // Nur erforderliche Cookies
+    window.acceptEssentialCookies = function() {
+        localStorage.setItem('cookieConsent', 'essential');
+        localStorage.setItem('cookieGoogleFonts', 'false');
+        localStorage.setItem('cookieAnalytics', 'false');
+        if (cookieBanner) cookieBanner.classList.remove('active');
+    };
+
+    // Cookie-Einstellungen öffnen
+    window.openCookieSettings = function() {
+        if (cookieModal) cookieModal.classList.add('active');
+    };
+
+    // Cookie-Einstellungen speichern
+    window.saveCookieSettings = function() {
+        const googleFonts = document.getElementById('cookieGoogleFonts');
+        const analytics = document.getElementById('cookieAnalytics');
+        
+        localStorage.setItem('cookieConsent', 'custom');
+        localStorage.setItem('cookieGoogleFonts', googleFonts ? googleFonts.checked : false);
+        localStorage.setItem('cookieAnalytics', analytics ? analytics.checked : false);
+        
+        if (cookieModal) cookieModal.classList.remove('active');
+        if (cookieBanner) cookieBanner.classList.remove('active');
+    };
+
     console.log('%c🦁 LENSON CONSULTING %c| %cPremium Restaurant-Webdesign',
         'font-size: 18px; font-weight: bold; color: #C6A86B;',
         '',
         'font-size: 14px; color: #fff;');
     console.log('%cInteresse? info@lensonconsulting.de', 'font-size: 12px; color: #9CA3AF;');
+
 });
