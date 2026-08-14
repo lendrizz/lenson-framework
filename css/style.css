@@ -2156,3 +2156,271 @@ a:hover {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================
+   SEKTION 1: PROBLEM (Keine Website kostet Sie Gäste)
+   ============================================ */
+.problem-section {
+    padding: var(--section-padding);
+    background-color: var(--color-dark);
+}
+
+.problem-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--color-anthrazit);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.problem-zwischentitel {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin: 36px 0 16px;
+    line-height: 1.4;
+}
+
+.problem-zwischentitel:first-child {
+    margin-top: 0;
+}
+
+.problem-text {
+    color: var(--color-gray-light);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.problem-checkliste {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.problem-checkliste li {
+    color: var(--color-gray-light);
+    font-size: 0.95rem;
+    padding: 10px 0;
+    padding-left: 28px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.problem-checkliste li:last-child {
+    border-bottom: none;
+}
+
+.problem-checkliste li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-gold);
+    font-weight: 700;
+}
+
+.problem-highlight {
+    background: rgba(198,168,107,0.06);
+    border-left: 3px solid var(--color-gold);
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 1.1rem;
+    color: var(--color-white);
+    line-height: 1.6;
+}
+
+.problem-fazit {
+    font-size: 1.2rem;
+    color: var(--color-white);
+    font-family: var(--font-display);
+    line-height: 1.6;
+    margin-top: 32px;
+    padding: 24px;
+    border-left: 3px solid var(--color-gold);
+    background: rgba(198,168,107,0.05);
+    border-radius: 0 12px 12px 0;
+}
+
+/* ============================================
+   SEKTION 2: LEISTUNGEN (Was eine gute Website leisten muss)
+   ============================================ */
+.leistungen-section {
+    padding: var(--section-padding);
+    background-color: var(--color-black);
+}
+
+.leistungen-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.leistung-card {
+    background: var(--color-anthrazit);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.leistung-card:hover {
+    border-color: var(--color-gold);
+    transform: translateY(-3px);
+}
+
+.leistung-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(198,168,107,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 1.5rem;
+    color: var(--color-gold);
+}
+
+.leistung-card h3 {
+    font-size: 1.2rem;
+    color: var(--color-white);
+    margin-bottom: 8px;
+}
+
+.leistung-card p {
+    color: var(--color-gray-light);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ============================================
+   SEKTION 3: ERSTEINDRUCK (Ihre Website ist der erste Eindruck)
+   ============================================ */
+.ersteindruck-section {
+    padding: var(--section-padding);
+    background-color: var(--color-dark);
+}
+
+.ersteindruck-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--color-anthrazit);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.ersteindruck-zwischentitel {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin: 36px 0 16px;
+    line-height: 1.4;
+}
+
+.ersteindruck-zwischentitel:first-child {
+    margin-top: 0;
+}
+
+.ersteindruck-text {
+    color: var(--color-gray-light);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.ersteindruck-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.ersteindruck-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(11,11,11,0.5);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    transition: var(--transition);
+}
+
+.ersteindruck-card:hover {
+    border-color: var(--color-gold);
+    transform: translateX(4px);
+}
+
+.ersteindruck-card i {
+    font-size: 1.3rem;
+    color: var(--color-gold);
+    flex-shrink: 0;
+    width: 24px;
+    text-align: center;
+}
+
+.ersteindruck-card div {
+    display: flex;
+    flex-direction: column;
+}
+
+.ersteindruck-card strong {
+    color: var(--color-white);
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.ersteindruck-card span {
+    color: var(--color-gray-light);
+    font-size: 0.85rem;
+}
+
+.ersteindruck-fazit {
+    font-size: 1.2rem;
+    color: var(--color-white);
+    font-family: var(--font-display);
+    line-height: 1.6;
+    margin-top: 32px;
+    padding: 24px;
+    border-left: 3px solid var(--color-gold);
+    background: rgba(198,168,107,0.05);
+    border-radius: 0 12px 12px 0;
+}
+
+.ersteindruck-fazit.final {
+    margin-top: 16px;
+    font-size: 1.4rem;
+    text-align: center;
+    border-left: none;
+    background: transparent;
+    padding: 20px 0;
+}
+
+/* Responsive für alle drei Sektionen */
+@media (max-width: 992px) {
+    .leistungen-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .leistungen-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .problem-content,
+    .ersteindruck-content {
+        padding: 24px 20px;
+    }
+    
+    .ersteindruck-card {
+        padding: 14px 16px;
+    }
+}
