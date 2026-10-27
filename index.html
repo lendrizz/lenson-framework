@@ -47,6 +47,20 @@
                 <li><a href="#gastronomie" class="nav-link">Gastronomie</a></li>
                 <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
                 <li><a href="#kontakt" class="nav-cta">Projekt besprechen</a></li>
+                <li class="nav-legal-dropdown">
+                    <button class="nav-legal-toggle" aria-label="Rechtliches Menü">
+                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0" width="20" height="2" rx="1" fill="currentColor"/>
+                            <rect y="7" width="20" height="2" rx="1" fill="currentColor"/>
+                            <rect y="14" width="20" height="2" rx="1" fill="currentColor"/>
+                        </svg>
+                    </button>
+                    <ul class="nav-legal-menu">
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="agb.html">AGB</a></li>
+                    </ul>
+                </li>
             </ul>
             
             <button class="nav-toggle" aria-label="Menü öffnen">
@@ -56,6 +70,23 @@
             </button>
         </nav>
     </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.querySelector('.nav-legal-toggle');
+            const dropdown = document.querySelector('.nav-legal-dropdown');
+            if (toggle && dropdown) {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('open');
+                });
+                document.addEventListener('click', function(e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('open');
+                    }
+                });
+            }
+        });
+    </script>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -311,7 +342,7 @@
                 <p class="footer-copyright">&copy; 2026 Lenson Consulting. Alle Rechte vorbehalten.</p>
                 <div class="footer-legal">
                     <a href="impressum.html">Impressum</a>
-                    <a href="datenschutz.html">Datenschutz</a>
+                    <a href="datenschutz.html">Datenschutz</a> | <a href="agb.html" class="text-gold">AGB</a>
                 </div>
             </div>
         </div>

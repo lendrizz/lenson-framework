@@ -185,6 +185,67 @@ a:hover {
     box-shadow: 0 10px 30px rgba(198, 168, 107, 0.3);
 }
 
+/* Legal Dropdown */
+.nav-legal-dropdown {
+    position: relative;
+    list-style: none;
+}
+
+.nav-legal-toggle {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.nav-legal-toggle:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+}
+
+.nav-legal-menu {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    list-style: none;
+    min-width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: var(--transition);
+    z-index: 1000;
+}
+
+.nav-legal-dropdown.open .nav-legal-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-legal-menu li a {
+    display: block;
+    padding: 10px 16px;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.nav-legal-menu li:last-child a {
+    border-bottom: none;
+}
+
+.nav-legal-menu li a:hover {
+    background: var(--color-bg-tertiary);
+    color: var(--color-gold);
+}
+
 .nav-toggle {
     display: none;
     background: none;
