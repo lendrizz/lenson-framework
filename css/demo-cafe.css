@@ -23,6 +23,14 @@
     --transition: all 0.3s ease;
 }
 
+/* Bilder: abgerundete Ecken global */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
 /* ============================================
    ZURÜCK-BUTTON
    ============================================ */

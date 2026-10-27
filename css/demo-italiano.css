@@ -71,6 +71,14 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Bilder: abgerundete Ecken global */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
 h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; color: var(--charcoal); }
 a { color: var(--terracotta); text-decoration: none; transition: var(--transition); }
 a:hover { color: var(--terracotta-dark); }

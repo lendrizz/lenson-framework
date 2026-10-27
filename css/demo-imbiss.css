@@ -40,6 +40,14 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Bilder: abgerundete Ecken global */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
 h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height: 1.1; text-transform: uppercase; }
 a { color: var(--red); text-decoration: none; }
 .text-red { color: var(--red); }

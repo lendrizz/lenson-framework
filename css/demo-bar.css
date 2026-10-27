@@ -20,6 +20,14 @@
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Bilder: abgerundete Ecken global */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
 /* ============================================
    ZURÜCK-BUTTON
    ============================================ */

@@ -182,7 +182,7 @@ a:hover { color: var(--red-dark); }
 .hero-buttons { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
 
 .hero-visual { position: relative; }
-.hero-img { width: 100%; border-radius: 4px; }
+.hero-img { width: 100%; border-radius: 12px; }
 
 .hero-stamp {
     position: absolute;
@@ -246,7 +246,7 @@ a:hover { color: var(--red-dark); }
 }
 
 .menu-images { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.menu-img { width: 100%; border-radius: 4px; }
+.menu-img { width: 100%; border-radius: 12px; }
 
 /* ============================================
    OMAKASE
@@ -271,7 +271,7 @@ a:hover { color: var(--red-dark); }
 .omakase-label { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray); }
 .omakase-value { display: block; font-family: var(--font-jp); font-size: 2rem; color: var(--red); }
 
-.omakase-img { width: 100%; border-radius: 4px; }
+.omakase-img { width: 100%; border-radius: 12px; }
 
 /* ============================================
    TEE
@@ -279,7 +279,7 @@ a:hover { color: var(--red-dark); }
 .tee-section { padding: 120px 0; background: var(--white); }
 
 .tee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.tee-img { width: 100%; border-radius: 4px; }
+.tee-img { width: 100%; border-radius: 12px; }
 
 .tee-text h2 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 8px 0 24px; }
 .tee-intro { color: var(--gray); line-height: 1.8; margin-bottom: 30px; }

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Lenson Consulting – Hochwertiges Webdesign und individuelle Weblösungen für Unternehmen und die Gastronomie. Professionelle Websites mit Anspruch, Anspruch und Klarheit. Jetzt Erstgespräch vereinbaren.">
+    <meta name="keywords" content="Webdesign Mannheim, Webdesign Agentur, individuelle Weblösungen, Website erstellen lassen, Lenson Consulting, Webdesign Gastronomie, Restaurant-Webdesign">
+    <meta name="author" content="Robin Lenson">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lensonconsulting.de/">
+    
+    <meta property="og:title" content="Lenson Consulting | Hochwertiges Webdesign & individuelle Weblösungen">
+    <meta property="og:description" content="Professionelle Websites mit Anspruch. Webdesign und individuelle Weblösungen für Unternehmen und die Gastronomie. Jetzt Erstgespräch vereinbaren.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lensonconsulting.de/">
+    <meta property="og:image" content="https://lensonconsulting.de/assets/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Lenson Consulting">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lenson Consulting | Hochwertiges Webdesign & individuelle Weblösungen">
+    <meta name="twitter:description" content="Professionelle Websites mit Anspruch. Webdesign und individuelle Weblösungen für Unternehmen und die Gastronomie.">
+    <meta name="twitter:image" content="https://lensonconsulting.de/assets/images/og-image.jpg">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Lenson Consulting",
+        "description": "Hochwertiges Webdesign und individuelle Weblösungen für Unternehmen und die Gastronomie.",
+        "url": "https://lensonconsulting.de",
+        "email": "info@lensonconsulting.de",
+        "telephone": "+4917662145153",
+        "address": { "@type": "PostalAddress", "streetAddress": "Carl-Reiß-Platz 15", "addressLocality": "Mannheim", "postalCode": "68165", "addressCountry": "DE" },
+        "priceRange": "€€",
+        "areaServed": { "@type": "Country", "name": "Deutschland" }
+    }
+    </script>
+    
+    <title>Lenson Consulting | Hochwertiges Webdesign & individuelle Weblösungen</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index-light.css">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/images/logo.png" alt="Lenson Consulting Logo" class="brand-logo">
+                <span class="brand-text-group">
+                    <span class="brand-text"><span class="brand-initial">L</span>enson</span>
+                    <span class="brand-sub">CONSULTING</span>
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#leistungen">Leistungen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#applikationen">Anwendungsfelder</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#restaurant">Restaurant-Webdesign</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#workflow">Arbeitsweise</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-7 hero-content">
+                    <span class="hero-badge">Webdesign auf höchstem Niveau</span>
+                    <h1 class="hero-title">
+                        <span class="hero-initial">W</span>ebsites,<br>
+                        die <span class="text-gold">bleiben.</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Hochwertiges Webdesign und individuelle Weblösungen für Unternehmen,<br>
+                        die Wert auf Qualität, Klarheit und einen starken digitalen Auftritt legen.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#leistungen" class="btn btn-gold btn-lg"><i class="bi bi-pencil-square"></i> Leistungen entdecken</a>
+                        <a href="#kontakt" class="btn btn-outline-light btn-lg ms-3">Erstgespräch vereinbaren <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <a href="#leistungen"><i class="bi bi-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- Leistungsversprechen -->
+    <section id="versprechen" class="leistungsversprechen-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="versprechen-image">
+                        <div class="image-placeholder" role="img" aria-label="Webdesign-Workspace"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <span class="section-badge">Unser Anspruch</span>
+                    <h2><span class="section-initial">W</span>as wir versprechen</h2>
+                    <div class="versprechen-grid">
+                        <div class="versprechen-item">
+                            <i class="bi bi-layout-three-columns"></i>
+                            <h3>Individuelles Design</h3>
+                            <p>Keine Templates von der Stange. Jede Website entsteht individuell auf Ihr Unternehmen und Ihre Zielgruppe zugeschnitten.</p>
+                        </div>
+                        <div class="versprechen-item">
+                            <i class="bi bi-bullseye"></i>
+                            <h3>Klare Ziele</h3>
+                            <p>Jede Entscheidung dient einem Zweck: Sichtbarkeit, Vertrauen und Conversion. Ohne überflüssiges Beiwerk.</p>
+                        </div>
+                        <div class="versprechen-item">
+                            <i class="bi bi-speedometer2"></i>
+                            <h3>Technische Qualität</h3>
+                            <p>Schnelle Ladezeiten, sauberer Code und barrierefreie Umsetzung für alle Endgeräte.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leistungen -->
+    <section id="leistungen" class="leistungen-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Leistungen</span>
+                <h2><span class="section-initial">I</span>hr Webdesign,<br><span class="section-initial">I</span>hre Lösung.</h2>
+                <p class="section-subtitle">
+                    Von der ersten Idee bis zur fertigen Website – individuell, professionell und mit Weitblick.
+                </p>
+            </div>
+
+            <div class="bausteine-grid">
+                <div class="baustein-card baustein-website">
+                    <div class="baustein-badge">Basis</div>
+                    <div class="baustein-header">
+                        <span class="baustein-icon">🖥️</span>
+                        <h3>Individuelles<br>Webdesign</h3>
+                    </div>
+                    <p class="baustein-text">Hochwertige Websites mit klarem Konzept, starker visueller Identität und benutzerfreundlicher Struktur.</p>
+                    <ul class="baustein-features">
+                        <li><i class="bi bi-check-lg"></i> Konzeption & Design</li>
+                        <li><i class="bi bi-check-lg"></i> Responsive Umsetzung</li>
+                        <li><i class="bi bi-check-lg"></i> WordPress-Installation</li>
+                        <li><i class="bi bi-check-lg"></i> Einweisung & Übergabe</li>
+                    </ul>
+                </div>
+
+                <div class="baustein-card">
+                    <div class="baustein-header">
+                        <span class="baustein-icon">⚡</span>
+                        <h3>Websites für<br>Unternehmen</h3>
+                    </div>
+                    <p class="baustein-text">Professionelle Webauftritte für Unternehmen jeder Größe – seriös, modern und suchmaschinenoptimiert.</p>
+                    <ul class="baustein-features">
+                        <li><i class="bi bi-check-lg"></i> Unternehmensdarstellung</li>
+                        <li><i class="bi bi-check-lg"></i> Dienstleistungsseiten</li>
+                        <li><i class="bi bi-check-lg"></i> Kontakt & Lead-Generierung</li>
+                        <li><i class="bi bi-check-lg"></i> SEO-Grundlagen</li>
+                    </ul>
+                </div>
+
+                <div class="baustein-card">
+                    <div class="baustein-header">
+                        <span class="baustein-icon">🍽️</span>
+                        <h3>Restaurant-<br>Webdesign</h3>
+                    </div>
+                    <p class="baustein-text">Spezialisierte Websites für die Gastronomie – mit Fokus auf Speisekarte, Reservierung und Tischbuchung.</p>
+                    <ul class="baustein-features">
+                        <li><i class="bi bi-check-lg"></i> Speisekarten-Darstellung</li>
+                        <li><i class="bi bi-check-lg"></i> Reservierungssystem</li>
+                        <li><i class="bi bi-check-lg"></i> Online-Bestellung</li>
+                        <li><i class="bi bi-check-lg"></i> Lokale Sichtbarkeit</li>
+                    </ul>
+                </div>
+
+                <div class="baustein-card">
+                    <div class="baustein-header">
+                        <span class="baustein-icon">🔧</span>
+                        <h3>Wartung &<br>Betreuung</h3>
+                    </div>
+                    <p class="baustein-text">Sorglos-Paket für Ihre Website: Updates, Sicherheit, Backups und laufende Optimierung.</p>
+                    <ul class="baustein-features">
+                        <li><i class="bi bi-check-lg"></i> Monatliche Updates</li>
+                        <li><i class="bi bi-check-lg"></i> Sicherheits-Backups</li>
+                        <li><i class="bi bi-check-lg"></i> Technischer Support</li>
+                        <li><i class="bi bi-check-lg"></i> Content-Pflege</li>
+                    </ul>
+                </div>
+
+                <div class="baustein-card">
+                    <div class="baustein-header">
+                        <span class="baustein-icon">📊</span>
+                        <h3>SEO &<br>Sichtbarkeit</h3>
+                    </div>
+                    <p class="baustein-text">Suchmaschinenoptimierung für mehr Reichweite, bessere Platzierungen und qualifizierte Anfragen.</p>
+                    <ul class="baustein-features">
+                        <li><i class="bi bi-check-lg"></i> Keyword-Recherche</li>
+                        <li><i class="bi bi-check-lg"></i> Onpage-Optimierung</li>
+                        <li><i class="bi bi-check-lg"></i> Technische SEO</li>
+                        <li><i class="bi bi-check-lg"></i> Lokales SEO</li>
+                    </ul>
+                </div>
+
+                <div class="baustein-card">
+                    <div class="baustein-header">
+                        <span class="baustein-icon">📱</span>
+                        <h3>Mobile-First<br>Design</h3>
+                    </div>
+                    <p class="baustein-text">Websites, die auf Smartphone und Tablet genauso gut funktionieren wie auf dem Desktop.</p>
+                    <ul class="baustein-features">
+                        <li><i class="bi bi-check-lg"></i> Responsive Layouts</li>
+                        <li><i class="bi bi-check-lg"></i> Touch-optimierte Bedienung</li>
+                        <li><i class="bi bi-check-lg"></i> Schnelle mobile Ladezeiten</li>
+                        <li><i class="bi bi-check-lg"></i> Mobile-Nutzerfreundlichkeit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Anwendungsfelder -->
+    <section id="applikationen" class="anwendungsfelder-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Anwendungsfelder</span>
+                <h2><span class="section-initial">F</span>ür welche Branchen<br><span class="section-initial">W</span>ir arbeiten.</h2>
+                <p class="section-subtitle">
+                    Wir entwickeln Weblösungen für unterschiedliche Projekttypen und Branchen – immer individuell, immer zielgruppengerecht.
+                </p>
+            </div>
+
+            <div class="branchen-grid">
+                <div class="branche-card">
+                    <div class="branche-icon">🏢</div>
+                    <h3>Unternehmen & Dienstleister</h3>
+                    <p>Professionelle Webauftritte für Beratungen, Agenturen, Handwerksbetriebe und Dienstleister, die online überzeugen wollen.</p>
+                </div>
+                <div class="branche-card">
+                    <div class="branche-icon">🍽️</div>
+                    <h3>Gastronomie & Hotellerie</h3>
+                    <p>Spezialisierte Websites für Restaurants, Cafés, Bars und Hotels – mit Speisekarte, Reservierung und lokaler Sichtbarkeit.</p>
+                </div>
+                <div class="branche-card">
+                    <div class="branche-icon">🎨</div>
+                    <h3>Kreative & Künstler</h3>
+                    <p>Portfolio-Websites und digitale Präsentationen für Designer, Fotografen, Künstler und Kreative mit ästhetischem Anspruch.</p>
+                </div>
+                <div class="branche-card">
+                    <div class="branche-icon">🏥</div>
+                    <h3>Gesundheit & Soziales</h3>
+                    <p>Vertrauensvolle Websites für Praxen, Therapeuten, Kliniken und soziale Einrichtungen mit Fokus auf Klarheit und Barrierefreiheit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant-Webdesign -->
+    <section id="restaurant" class="restaurant-abschnitt-section">
+        <div class="container">
+            <div class="restaurant-content">
+                <div class="restaurant-text">
+                    <span class="section-badge">Spezialisierung</span>
+                    <h2><span class="section-initial">R</span>estaurant-Webdesign<br><span class="section-initial">G</span>astronomie mit Anspruch.</h2>
+                    <p class="restaurant-intro">
+                        Die Gastronomie ist unser besonderer Schwerpunkt. Wir entwickeln Websites, die den Charakter Ihres Betriebs sichtbar machen – von Fine Dining bis zum Imbiss.
+                    </p>
+                    <ul class="restaurant-features">
+                        <li><i class="bi bi-check-lg"></i> Speisekarten-Darstellung</li>
+                        <li><i class="bi bi-check-lg"></i> Tischreservierung & Online-Bestellung</li>
+                        <li><i class="bi bi-check-lg"></i> Lokale Suchmaschinenoptimierung</li>
+                        <li><i class="bi bi-check-lg"></i> Mobile-Optimierung für unterwegs</li>
+                    </ul>
+                    <a href="restaurant.html" class="btn btn-gold btn-lg"><i class="bi bi-restaurant"></i> Zur Restaurant-Landingpage</a>
+                </div>
+                <div class="restaurant-image">
+                    <div class="image-placeholder" role="img" aria-label="Restaurant-Webdesign"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Arbeitsweise -->
+    <section id="workflow" class="workflow-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Arbeitsweise</span>
+                <h2><span class="section-initial">V</span>on der Anfrage<br>zur fertigen Website.</h2>
+                <p class="section-subtitle">
+                    Ein nachvollziehbarer Ablauf, bei dem Sie jederzeit wissen, in welcher Phase sich Ihr Projekt befindet.
+                </p>
+            </div>
+
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <h3>Erstgespräch</h3>
+                    <p>Wir besprechen Ihre Ziele, Anforderungen und Vorstellungen für Ihre neue Website.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <h3>Konzept & Design</h3>
+                    <p>Wir entwickeln ein individuelles Konzept und Design, das auf Ihre Marke und Zielgruppe zugeschnitten ist.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <h3>Umsetzung</h3>
+                    <p>Die technische Umsetzung erfolgt mit sauberem Code, responsivem Design und SEO-Grundlagen.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <h3>Go-Live & Betreuung</h3>
+                    <p>Nach der Veröffentlichung stehen wir für Wartung, Updates und weitere Optimierungen zur Verfügung.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="kontakt-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Kontakt</span>
+                <h2><span class="section-initial">B</span>ereit für Ihre<br>neue Website?</h2>
+                <p class="section-subtitle">Schreiben Sie mir – ich melde mich innerhalb von 24 Stunden.</p>
+            </div>
+
+            <div class="kontakt-vcard-grid">
+                <div class="kontakt-form-col">
+                    <div class="kontakt-card">
+                        <form id="kontaktForm" class="kontakt-form" action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="2ea00a9f-83c1-4240-a87c-0bb181b3530d">
+                            <input type="hidden" name="subject" value="Neue Anfrage von lensonconsulting.de">
+                            <input type="hidden" name="from_name" value="Lenson Consulting Website">
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3"><label for="name" class="form-label">Name *</label><input type="text" class="form-control" id="name" name="name" required></div>
+                                <div class="col-md-6 mb-3"><label for="email" class="form-label">E-Mail *</label><input type="email" class="form-control" id="email" name="email" required></div>
+                            </div>
+                            <div class="mb-3"><label for="nachricht" class="form-label">Ihre Nachricht *</label><textarea class="form-control" id="nachricht" name="nachricht" rows="4" required placeholder="Erzählen Sie mir von Ihrem Projekt..."></textarea></div>
+                            <div class="mb-3 form-check"><input type="checkbox" class="form-check-input" id="datenschutz" required><label class="form-check-label" for="datenschutz">Ich habe die <a href="datenschutz.html" class="text-gold" target="_blank">Datenschutzerklärung</a> gelesen und stimme zu. *</label></div>
+                            <button type="submit" class="btn btn-gold btn-lg w-100"><i class="bi bi-send"></i> Unverbindliche Anfrage senden</button>
+                        </form>
+                        <div id="formMessage"></div>
+                    </div>
+                </div>
+
+                <div class="vcard-col">
+                    <div class="vcard-wrapper">
+                        <div class="vcard" id="vcardDownload">
+                            <div class="vcard-inner">
+                                <div class="vcard-content">
+                                    <div class="vcard-header">
+                                        <img src="assets/images/logo.png" alt="Lenson Consulting Logo" class="vcard-logo">
+                                        <div class="vcard-name-group">
+                                            <h3 class="vcard-name">Robin Lenson</h3>
+                                            <span class="vcard-title">Webdesign & Consulting</span>
+                                        </div>
+                                    </div>
+                                    <div class="vcard-divider"></div>
+                                    <div class="vcard-details">
+                                        <div class="vcard-detail"><i class="bi bi-telephone-fill"></i><a href="tel:+4917662145153">+49 176 62145153</a></div>
+                                        <div class="vcard-detail"><i class="bi bi-envelope-fill"></i><a href="mailto:info@lensonconsulting.de">info@lensonconsulting.de</a></div>
+                                        <div class="vcard-detail"><i class="bi bi-globe2"></i><a href="https://lensonconsulting.de" target="_blank">lensonconsulting.de</a></div>
+                                        <div class="vcard-detail"><i class="bi bi-geo-alt-fill"></i><span>Mannheim, Deutschland</span></div>
+                                    </div>
+                                    <div class="vcard-footer-text">
+                                        <span>Lenson Consulting</span>
+                                        <span class="vcard-dot">·</span>
+                                        <span>Hochwertiges Webdesign & individuelle Weblösungen</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vcard-actions">
+                            <button class="vcard-btn vcard-btn-download" onclick="downloadVCard()" title="Als Kontakt speichern"><i class="bi bi-download"></i><span>Speichern</span></button>
+                            <button class="vcard-btn vcard-btn-qr" onclick="toggleQR()" title="QR-Code anzeigen"><i class="bi bi-qr-code"></i><span>QR-Code</span></button>
+                            <a href="https://wa.me/4917662145153" target="_blank" class="vcard-btn vcard-btn-whatsapp" title="WhatsApp"><i class="bi bi-whatsapp"></i><span>WhatsApp</span></a>
+                        </div>
+                        <div class="vcard-qr-modal" id="qrModal">
+                            <div class="vcard-qr-card">
+                                <button class="vcard-qr-close" onclick="toggleQR()">✕</button>
+                                <h3>QR-Code scannen</h3>
+                                <div class="vcard-qr-code" id="qrCode"></div>
+                                <p>Scannen Sie diesen Code mit Ihrer Kamera, um den Kontakt zu speichern.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand-row">
+                        <img src="assets/images/logo.png" alt="Lenson Consulting Logo" style="width: 36px; height: 36px;">
+                        <span class="brand-text-group">
+                            <span class="brand-text"><span class="brand-initial">L</span>enson</span>
+                            <span class="brand-sub">CONSULTING</span>
+                        </span>
+                    </div>
+                    <p class="footer-text">Hochwertiges Webdesign und individuelle Weblösungen für Unternehmen und die Gastronomie.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4"><h4>Leistungen</h4><ul class="footer-links"><li><a href="#leistungen">Webdesign</a></li><li><a href="#leistungen">Unternehmens-Websites</a></li><li><a href="#leistungen">Restaurant-Webdesign</a></li><li><a href="#leistungen">Wartung & Betreuung</a></li><li><a href="#leistungen">SEO & Sichtbarkeit</a></li></ul></div>
+                <div class="col-lg-2 col-md-4 mb-4"><h4>Rechtliches</h4><ul class="footer-links"><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></div>
+                <div class="col-lg-2 mb-4"><h4>Kontakt</h4><ul class="footer-links"><li><a href="mailto:info@lensonconsulting.de"><i class="bi bi-envelope"></i> E-Mail</a></li><li><a href="tel:+4917662145153"><i class="bi bi-telephone"></i> Anrufen</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><div class="row"><div class="col-md-6"><p class="mb-0">&copy; 2026 Lenson Consulting. Alle Rechte vorbehalten.</p></div><div class="col-md-6 text-md-end"><p class="mb-0">Mit <i class="bi bi-heart-fill text-gold"></i> für hochwertiges Webdesign entwickelt.</p></div></div></div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-container">
+            <div class="cookie-text">
+                <h4>🍪 Cookie-Einstellungen</h4>
+                <p>Wir verwenden Cookies, um Ihnen die bestmögliche Nutzung unserer Website zu ermöglichen. <a href="datenschutz.html">Mehr erfahren</a></p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">Alle akzeptieren</button>
+                <button class="cookie-btn cookie-btn-essential" onclick="acceptEssentialCookies()">Nur erforderliche</button>
+                <button class="cookie-btn cookie-btn-settings" onclick="openCookieSettings()">Einstellungen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie-Einstellungen Modal -->
+    <div class="cookie-modal" id="cookieModal">
+        <div class="cookie-modal-card">
+            <h3>Cookie-Einstellungen</h3>
+            <p>Wählen Sie aus, welche Cookies Sie zulassen möchten. Erforderliche Cookies sind für den Betrieb der Website notwendig.</p>
+            <div class="cookie-toggle-group">
+                <div class="cookie-toggle">
+                    <div class="cookie-toggle-info">
+                        <h5>Erforderliche Cookies</h5>
+                        <p>Notwendig für die Grundfunktionen der Website.</p>
+                    </div>
+                    <label class="cookie-switch">
+                        <input type="checkbox" checked disabled>
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-toggle">
+                    <div class="cookie-toggle-info">
+                        <h5>Google Fonts</h5>
+                        <p>Lädt Schriftarten von Google-Servern für die Darstellung.</p>
+                    </div>
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="cookieGoogleFonts" checked>
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-toggle">
+                    <div class="cookie-toggle-info">
+                        <h5>Analytische Cookies</h5>
+                        <p>Helfen uns zu verstehen, wie Besucher die Website nutzen.</p>
+                    </div>
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="cookieAnalytics">
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+            </div>
+            <button class="cookie-save-btn" onclick="saveCookieSettings()">Einstellungen speichern</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

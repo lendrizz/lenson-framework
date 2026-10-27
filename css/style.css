@@ -59,6 +59,14 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Bilder: abgerundete Ecken global */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-weight: 600;
@@ -917,7 +925,7 @@ a:hover {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: url('../assets/images/testimonial-avatar.jpg') center/cover no-repeat;
+    background: url('../assets/images/connectify-avatar.jpg') center/cover no-repeat;
     border: 2px solid var(--color-gold);
     display: flex;
     align-items: center;
