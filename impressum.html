@@ -10,10 +10,10 @@
     <!-- Bootstrap Icons -->
     <!-- Google Fonts -->
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/landing-new.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     
     <style>
         .legal-section {
@@ -32,19 +32,29 @@
             font-family: 'Playfair Display', serif;
             color: #C6A86B;
             margin-bottom: 30px;
+            font-size: 2rem;
         }
         
         .legal-content h2 {
             font-family: 'Playfair Display', serif;
             color: #FFFFFF;
-            font-size: 1.5rem;
-            margin-top: 30px;
+            font-size: 1.4rem;
+            margin-top: 35px;
             margin-bottom: 15px;
+        }
+        
+        .legal-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: #FFFFFF;
+            font-size: 1.15rem;
+            margin-top: 25px;
+            margin-bottom: 12px;
         }
         
         .legal-content p, .legal-content li {
             color: #9CA3AF;
             line-height: 1.8;
+            font-size: 0.95rem;
         }
         
         .legal-content a {
@@ -54,6 +64,14 @@
         
         .legal-content a:hover {
             color: #D4B87A;
+        }
+        
+        .legal-content ul {
+            padding-left: 20px;
+        }
+        
+        .legal-content ul li {
+            margin-bottom: 8px;
         }
         
         .back-link {
@@ -69,47 +87,66 @@
         .back-link:hover {
             color: #D4B87A;
         }
-
-        .brand-text {
-    display: flex;
-    align-items: baseline;
-}
-
-.brand-initial {
-    font-family: 'Alex Brush', 'Playfair Display', Georgia, cursive;
-    font-size: 1.5em;
-    font-weight: 400;
-    color: var(--color-gold);
-    display: inline;
-    vertical-align: baseline;
-    margin-right: -1px;
-}
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-    <img src="assets/images/logo.png" alt="Lenson Consulting Logo" class="brand-logo">
-    <span class="brand-text-group">
-        <span class="brand-text"><span class="brand-initial">L</span>enson</span>
-        <span class="brand-sub">CONSULTING</span>
-    </span>
-</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
+    <header class="nav-header" id="navHeader">
+        <nav class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/logo.png" alt="Lenson Consulting Logo">
+                <div class="nav-logo-text">
+                    <span class="nav-logo-main">Lenson</span>
+                    <span class="nav-logo-sub">CONSULTING</span>
+                </div>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html#webdesign" class="nav-link">Webdesign</a></li>
+                <li><a href="index.html#social" class="nav-link">Social Media</a></li>
+                <li><a href="index.html#gastronomie" class="nav-link">Gastronomie</a></li>
+                <li><a href="index.html#kontakt" class="nav-link">Kontakt</a></li>
+                <li><a href="index.html#kontakt" class="nav-cta">Projekt besprechen</a></li>
+                <li class="nav-legal-dropdown">
+                    <button class="nav-legal-toggle" aria-label="Rechtliches Menü">
+                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0" width="20" height="2" rx="1" fill="currentColor"/>
+                            <rect y="7" width="20" height="2" rx="1" fill="currentColor"/>
+                            <rect y="14" width="20" height="2" rx="1" fill="currentColor"/>
+                        </svg>
+                    </button>
+                    <ul class="nav-legal-menu">
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="agb.html">AGB</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <button class="nav-toggle" aria-label="Menü öffnen">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-                        <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html#leistungen">Leistungen</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#restaurant">Restaurant-Webdesign</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#workflow">Arbeitsweise</a></li>
-                    <li class="nav-item"><a class="btn btn-outline-gold ms-lg-3" href="index.html#kontakt">Kontakt</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.querySelector('.nav-legal-toggle');
+            const dropdown = document.querySelector('.nav-legal-dropdown');
+            if (toggle && dropdown) {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('open');
+                });
+                document.addEventListener('click', function(e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('open');
+                    }
+                });
+            }
+        });
+    </script>
 
     <section class="legal-section">
         <div class="container">
@@ -167,7 +204,7 @@
                         <p class="mb-0">&copy; 2026 Lenson Consulting. Alle Rechte vorbehalten.</p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <p class="mb-0"><a href="impressum.html" class="text-gold">Impressum</a> | <a href="datenschutz.html" class="text-gold">Datenschutz</a></p>
+                        <p class="mb-0"><a href="impressum.html" class="text-gold">Impressum</a> | <a href="datenschutz.html" class="text-gold">Datenschutz</a> | <a href="agb.html" class="text-gold">AGB</a></p>
                     </div>
                 </div>
             </div>
