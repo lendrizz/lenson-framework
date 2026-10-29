@@ -63,7 +63,7 @@
                 </li>
             </ul>
             
-            <button class="nav-toggle" aria-label="Menü öffnen">
+            <button class="nav-toggle" aria-label="Menü öffnen" id="navToggle">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -83,6 +83,19 @@
                     if (!dropdown.contains(e.target)) {
                         dropdown.classList.remove('open');
                     }
+                });
+            }
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.querySelector('.nav-menu');
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+                const navLinks = navMenu.querySelectorAll('.nav-link, .nav-cta');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navMenu.classList.remove('active');
+                    });
                 });
             }
         });

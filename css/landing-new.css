@@ -1076,7 +1076,48 @@ a:hover {
 /* Responsive */
 @media (max-width: 968px) {
     .nav-menu {
+        position: absolute;
+        top: 90px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(11, 11, 11, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 20px 0;
+        gap: 0;
         display: none;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+    }
+    
+    .nav-cta {
+        display: inline-block;
+    }
+    
+    .nav-legal-dropdown {
+        width: 100%;
+    }
+    
+    .nav-legal-toggle {
+        margin: 0 auto;
+    }
+    
+    .nav-legal-menu {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) translateY(10px);
+    }
+    
+    .nav-legal-dropdown.open .nav-legal-menu {
+        transform: translateX(-50%) translateY(0);
     }
     
     .nav-toggle {
@@ -1101,28 +1142,101 @@ a:hover {
 @media (max-width: 640px) {
     .container,
     .nav-container {
-        padding: 0 24px;
+        padding: 0 20px;
+    }
+    
+    .nav-container {
+        height: 70px;
+    }
+    
+    .nav-logo img {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .nav-logo-main {
+        font-size: 1.2rem;
+    }
+    
+    .nav-logo-sub {
+        font-size: 0.45rem;
+        letter-spacing: 5px;
     }
     
     .hero {
-        padding: 160px 0 100px;
+        padding: 140px 0 80px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .hero-mockup {
+        padding: 20px;
+    }
+    
+    .hero-mockup-content {
+        padding: 24px 20px;
+        min-height: 300px;
     }
     
     .section {
-        padding: 100px 0;
+        padding: 80px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 60px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .webdesign-image {
+        height: 300px;
+    }
+    
+    .contact-section {
+        padding: 80px 0;
     }
     
     .contact-form {
-        padding: 32px 24px;
+        padding: 28px 20px;
+    }
+    
+    .form-input,
+    .form-textarea {
+        padding: 12px 14px;
     }
     
     .footer-grid {
         grid-template-columns: 1fr;
+        gap: 32px;
     }
     
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+        gap: 12px;
+    }
+    
+    .footer-legal {
+        flex-direction: column;
+        gap: 8px;
     }
 }
 
