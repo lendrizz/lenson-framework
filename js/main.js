@@ -12,17 +12,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // NAVIGATION SCROLL EFFEKT
     // ============================================
     const navbar = document.getElementById('mainNav');
-    
-    function handleNavScroll() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
+
+function handleNavScroll() {
+    if (!navbar) return;
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
     }
-    
-    window.addEventListener('scroll', handleNavScroll);
-    handleNavScroll();
+}
+
+window.addEventListener('scroll', handleNavScroll);
+handleNavScroll();
 
     // ============================================
     // NAVIGATION: Aktiver Link beim Scrollen

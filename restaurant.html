@@ -52,39 +52,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/landing-new.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
     <!-- Navigation -->
-    <header class="nav-header liquid-nav-header" id="mainNav">
-        <nav class="nav-container liquid-nav-container">
-            <a class="navbar-brand" href="index.html">
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
                 <img src="assets/images/logo.png" alt="Lenson Consulting Logo" class="brand-logo">
                 <span class="brand-text-group">
                     <span class="brand-text"><span class="brand-initial">L</span>enson</span>
                     <span class="brand-sub">CONSULTING</span>
                 </span>
             </a>
-            <div class="liquid-nav-pill">
-                <div class="liquid-nav-glass"></div>
-                <div class="liquid-nav-drop"></div>
-                <ul class="navbar-nav ms-auto align-items-center liquid-nav-menu">
-                    <li class="nav-item"><a class="nav-link liquid-nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link liquid-nav-link" href="#problem">Realtalk</a></li>
-                    <li class="nav-item"><a class="nav-link liquid-nav-link" href="#leistungen">Leistungen</a></li>
-                    <li class="nav-item"><a class="nav-link liquid-nav-link" href="#about">Über mich</a></li>
-                    <li class="nav-item"><a class="nav-link liquid-nav-link" href="#kontakt">Kontakt</a></li>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#problem">Realtalk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#leistungen">Leistungen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Über mich</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-gold ms-lg-3" href="#kontakt">Kontakt</a></li>
                     <li class="nav-item dropdown ms-lg-3">
-                        <button class="nav-legal-toggle dropdown-toggle" type="button" id="legalDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 8px 12px;">
+                        <button class="btn btn-outline-gold dropdown-toggle" type="button" id="legalDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 8px 12px;">
                             <svg width="18" height="14" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect y="0" width="20" height="2" rx="1" fill="currentColor"/>
                                 <rect y="7" width="20" height="2" rx="1" fill="currentColor"/>
                                 <rect y="14" width="20" height="2" rx="1" fill="currentColor"/>
                             </svg>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-end nav-legal-menu" aria-labelledby="legalDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="legalDropdown">
                             <li><a class="dropdown-item" href="datenschutz.html">Datenschutz</a></li>
                             <li><a class="dropdown-item" href="impressum.html">Impressum</a></li>
                             <li><a class="dropdown-item" href="agb.html">AGB</a></li>
@@ -92,37 +94,8 @@
                     </li>
                 </ul>
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </nav>
-    </header>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const pill = document.querySelector('.liquid-nav-pill');
-            const drop = document.querySelector('.liquid-nav-drop');
-            const links = document.querySelectorAll('.liquid-nav-link');
-            if (pill && drop && links.length) {
-                function moveDrop(el) {
-                    if (!el) return;
-                    const rect = el.getBoundingClientRect();
-                    const pillRect = pill.getBoundingClientRect();
-                    const left = rect.left - pillRect.left + pill.scrollLeft;
-                    const width = rect.width;
-                    drop.style.width = width + 'px';
-                    drop.style.transform = 'translateX(' + left + 'px)';
-                    pill.classList.add('has-active');
-                }
-                links.forEach(link => {
-                    link.addEventListener('mouseenter', () => moveDrop(link));
-                    link.addEventListener('focus', () => moveDrop(link));
-                });
-                pill.addEventListener('mouseleave', () => {
-                    pill.classList.remove('has-active');
-                });
-            }
-        });
-    </script>
+        </div>
+    </nav>
 
     <!-- Hero -->
     <section id="hero" class="hero-section">

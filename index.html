@@ -44,9 +44,6 @@
             <div class="liquid-nav-pill">
                 <div class="liquid-nav-glass"></div>
                 <div class="liquid-nav-drop"></div>
-            <div class="liquid-nav-pill">
-                <div class="liquid-nav-glass"></div>
-                <div class="liquid-nav-drop"></div>
                 <ul class="nav-menu liquid-nav-menu">
                     <li><a href="#webdesign" class="nav-link liquid-nav-link">Webdesign</a></li>
                     <li><a href="#social" class="nav-link liquid-nav-link">Social Media</a></li>
@@ -68,7 +65,6 @@
                         </ul>
                     </li>
                 </ul>
-            </div>
             </div>
             
             <button class="nav-toggle" aria-label="Menü öffnen" id="navToggle">
@@ -144,9 +140,9 @@
             <div class="hero-grid">
                 <div class="hero-content">
                     <span class="hero-label">Webdesign · Social Media · Gastronomie</span>
-                    <h1 class="hero-title">Dein digitaler Auftritt. Klar durchdacht.</h1>
+                    <h1 class="hero-title">Präsenz schafft Vertrauen<span class="text-gold">.</span></h1>
                     <p class="hero-subtitle">
-                        Individuelles Webdesign für Unternehmen, die online professionell auftreten und ihre Kunden überzeugen möchten.
+                        Individuelles Webdesign, das dein Unternehmen professionell präsentiert und aus Besuchern Kunden macht.
                     </p>
                     <div class="hero-actions">
                         <a href="#kontakt" class="btn btn-primary">
@@ -160,7 +156,7 @@
                 </div>
                 <div class="hero-visual">
                     <div class="hero-mockup">
-                        <img src="assets/images/index-1.jpg" alt="Lenson Consulting Webdesign" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="assets/images/index-1.jpg" alt="Lenson Consulting Webdesign" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 12px;">
                     </div>
                 </div>
             </div>
@@ -253,7 +249,7 @@
                 </div>
                 <div class="gastronomy-visual">
                     <div class="webdesign-image">
-                        <img src="assets/images/index-4.jpg" alt="Restaurant Webdesign" style="width: 100%; height: 100%; object-fit: cover; object-position: left center;">
+                        <img src="assets/images/index-4.jpg" alt="Restaurant Webdesign" style="width: 100%; height: auto; object-fit: contain;">
                     </div>
                 </div>
             </div>
@@ -374,7 +370,7 @@
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <form id="kontaktForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="2ea00a9f-83c1-4240-a87c-0bb181b3530d">
                         <input type="hidden" name="subject" value="Neue Anfrage von lensonconsulting.de">
                         
@@ -403,6 +399,7 @@
                             <i class="bi bi-arrow-right"></i>
                         </button>
                     </form>
+                    <div id="formMessage"></div>
                 </div>
             </div>
         </div>
@@ -438,6 +435,7 @@
                         <li><a href="#faq">FAQ</a></li>
                         <li><a href="#kontakt">Kontakt</a></li>
                         <li><a href="restaurant.html">Restaurant-Landingpage</a></li>
+                        <li><a href="https://instagram.com/lensonconsulting" target="_blank">Instagram</a></li>
                     </ul>
                 </div>
                 <div>
@@ -458,6 +456,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/main.js"></script>
 
     <script>
         // Navbar scroll effect
@@ -483,6 +483,44 @@
                 }
             });
         });
+
+        // Kontaktformular Validierung
+        const kontaktForm = document.getElementById('kontaktForm');
+        const formMessage = document.getElementById('formMessage');
+
+        if (kontaktForm) {
+            kontaktForm.addEventListener('submit', function(e) {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const nachricht = document.getElementById('message').value.trim();
+                
+                if (!name || !email || !nachricht) {
+                    e.preventDefault();
+                    showFormMessage('Bitte füllen Sie alle Pflichtfelder aus.', 'error');
+                    return;
+                }
+                
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    e.preventDefault();
+                    showFormMessage('Bitte geben Sie eine gültige E-Mail-Adresse ein.', 'error');
+                    return;
+                }
+                
+                showFormMessage('Vielen Dank, ' + name + '! Ihre Anfrage wird gesendet.', 'success');
+            });
+        }
+
+        function showFormMessage(message, type) {
+            if (!formMessage) return;
+            formMessage.innerHTML = '';
+            const div = document.createElement('div');
+            div.className = 'form-message alert ' + (type === 'success' ? 'alert-success' : 'alert-danger');
+            div.textContent = message;
+            div.style.marginTop = '20px';
+            div.style.borderRadius = '8px';
+            formMessage.appendChild(div);
+            setTimeout(() => { formMessage.innerHTML = ''; }, 8000);
+        }
     </script>
 </body>
 </html>
