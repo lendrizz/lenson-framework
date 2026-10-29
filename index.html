@@ -31,9 +31,9 @@
 </head>
 <body>
     <!-- Navigation -->
-    <header class="nav-header" id="navHeader">
-        <nav class="nav-container">
-            <a href="#" class="nav-logo">
+    <header class="nav-header liquid-nav-header" id="navHeader">
+        <nav class="nav-container liquid-nav-container">
+            <a href="#" class="nav-logo liquid-nav-logo">
                 <img src="assets/images/logo.png" alt="Lenson Consulting Logo">
                 <div class="nav-logo-text">
                     <span class="nav-logo-main">Lenson</span>
@@ -41,28 +41,35 @@
                 </div>
             </a>
             
-            <ul class="nav-menu">
-                <li><a href="#webdesign" class="nav-link">Webdesign</a></li>
-                <li><a href="#social" class="nav-link">Social Media</a></li>
-                <li><a href="#gastronomie" class="nav-link">Gastronomie</a></li>
-                <li><a href="#faq" class="nav-link">FAQ</a></li>
-                <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
-                <li><a href="#kontakt" class="nav-cta">Projekt besprechen</a></li>
-                <li class="nav-legal-dropdown">
-                    <button class="nav-legal-toggle" aria-label="Rechtliches Menü">
-                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect y="0" width="20" height="2" rx="1" fill="currentColor"/>
-                            <rect y="7" width="20" height="2" rx="1" fill="currentColor"/>
-                            <rect y="14" width="20" height="2" rx="1" fill="currentColor"/>
-                        </svg>
-                    </button>
-                    <ul class="nav-legal-menu">
-                        <li><a href="datenschutz.html">Datenschutz</a></li>
-                        <li><a href="impressum.html">Impressum</a></li>
-                        <li><a href="agb.html">AGB</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <div class="liquid-nav-pill">
+                <div class="liquid-nav-glass"></div>
+                <div class="liquid-nav-drop"></div>
+            <div class="liquid-nav-pill">
+                <div class="liquid-nav-glass"></div>
+                <div class="liquid-nav-drop"></div>
+                <ul class="nav-menu liquid-nav-menu">
+                    <li><a href="#webdesign" class="nav-link liquid-nav-link">Webdesign</a></li>
+                    <li><a href="#social" class="nav-link liquid-nav-link">Social Media</a></li>
+                    <li><a href="#gastronomie" class="nav-link liquid-nav-link">Gastronomie</a></li>
+                    <li><a href="#faq" class="nav-link liquid-nav-link">FAQ</a></li>
+                    <li><a href="#kontakt" class="nav-link liquid-nav-link">Kontakt</a></li>
+                    <li class="nav-legal-dropdown">
+                        <button class="nav-legal-toggle" aria-label="Rechtliches Menü">
+                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="0" width="20" height="2" rx="1" fill="currentColor"/>
+                                <rect y="7" width="20" height="2" rx="1" fill="currentColor"/>
+                                <rect y="14" width="20" height="2" rx="1" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <ul class="nav-legal-menu">
+                            <li><a href="datenschutz.html">Datenschutz</a></li>
+                            <li><a href="impressum.html">Impressum</a></li>
+                            <li><a href="agb.html">AGB</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            </div>
             
             <button class="nav-toggle" aria-label="Menü öffnen" id="navToggle">
                 <span></span>
@@ -78,6 +85,7 @@
             if (toggle && dropdown) {
                 toggle.addEventListener('click', function(e) {
                     e.preventDefault();
+                    e.stopPropagation();
                     dropdown.classList.toggle('open');
                 });
                 document.addEventListener('click', function(e) {
@@ -92,11 +100,39 @@
                 navToggle.addEventListener('click', function() {
                     navMenu.classList.toggle('active');
                 });
-                const navLinks = navMenu.querySelectorAll('.nav-link, .nav-cta');
+                const navLinks = navMenu.querySelectorAll('.nav-link');
                 navLinks.forEach(link => {
                     link.addEventListener('click', function() {
                         navMenu.classList.remove('active');
                     });
+                });
+            }
+
+            const pill = document.querySelector('.liquid-nav-pill');
+            const drop = document.querySelector('.liquid-nav-drop');
+            const links = document.querySelectorAll('.liquid-nav-link');
+            const cta = document.querySelector('.liquid-nav-cta');
+            if (pill && drop && links.length) {
+                function moveDrop(el) {
+                    if (!el) return;
+                    const rect = el.getBoundingClientRect();
+                    const pillRect = pill.getBoundingClientRect();
+                    const left = rect.left - pillRect.left + pill.scrollLeft;
+                    const width = rect.width;
+                    drop.style.width = width + 'px';
+                    drop.style.transform = 'translateX(' + left + 'px)';
+                    pill.classList.add('has-active');
+                }
+                links.forEach(link => {
+                    link.addEventListener('mouseenter', () => moveDrop(link));
+                    link.addEventListener('focus', () => moveDrop(link));
+                });
+                if (cta) {
+                    cta.addEventListener('mouseenter', () => moveDrop(cta));
+                    cta.addEventListener('focus', () => moveDrop(cta));
+                }
+                pill.addEventListener('mouseleave', () => {
+                    pill.classList.remove('has-active');
                 });
             }
         });
