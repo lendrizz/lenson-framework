@@ -28,6 +28,98 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/landing-new.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        /* Hero Text Animation – 3-Zeilen-Layout */
+        :root {
+            --hero-line-height: 1.15em;
+            --hero-scale: 1;
+            --hero-gap: 0.15em;
+            --hero-safety: 0.25em;
+            --hero-bezier-k: 1.3;
+        }
+
+        @media (max-width: 430px) {
+            :root {
+                --hero-bezier-k: 1.1;
+            }
+        }
+
+        @media (max-width: 360px) {
+            :root {
+                --hero-bezier-k: 0.9;
+            }
+        }
+
+        .hero-text-wrapper {
+            display: block;
+            line-height: var(--hero-line-height);
+            position: relative;
+            font-size: clamp(1.8rem, 8.5vw, 4.5rem);
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        .hero-line {
+            height: var(--hero-line-height);
+            line-height: var(--hero-line-height);
+            display: flex;
+            align-items: baseline;
+            gap: var(--hero-gap);
+            overflow: visible;
+            white-space: nowrap;
+        }
+
+        .hero-line .hero-word {
+            display: inline-block;
+            white-space: nowrap;
+            overflow-wrap: normal;
+            hyphens: none;
+        }
+
+        .hero-word {
+            display: inline-block;
+            white-space: nowrap;
+            overflow-wrap: normal;
+            hyphens: none;
+            transition: opacity 2s ease-in-out, transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .hero-word-static {
+            /* "schafft" – niemals animiert */
+            transition: none;
+        }
+
+        .hero-dot {
+            display: inline-block;
+            color: var(--color-gold);
+            white-space: nowrap;
+        }
+
+        .hero-sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .hero-word[aria-hidden="true"] {
+            user-select: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-word {
+                transition: opacity 0.3s ease;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -136,7 +228,21 @@
             <div class="hero-grid">
                 <div class="hero-content">
                     <span class="hero-label">Webdesign · Social Media · Gastronomie</span>
-                    <h1 class="hero-title">Präsenz schafft Vertrauen<span class="text-gold">.</span></h1>
+                    <h1 class="hero-title">
+                    <span class="hero-text-wrapper" id="heroText">
+                        <span class="hero-line" id="heroLine1">
+                            <span class="hero-word" data-word="Präsenz" aria-hidden="true">Präsenz</span>
+                        </span>
+                        <span class="hero-line" id="heroLine2">
+                            <span class="hero-word hero-word-static" data-word="schafft" aria-hidden="true">schafft</span>
+                        </span>
+                        <span class="hero-line" id="heroLine3">
+                            <span class="hero-word" data-word="Vertrauen" aria-hidden="true">Vertrauen</span>
+                            <span class="hero-dot" aria-hidden="true">.</span>
+                        </span>
+                    </span>
+                </h1>
+                <p class="sr-only hero-sr-only" id="heroAria" aria-live="polite">Präsenz schafft Vertrauen. Vertrauen schafft Kontakt. Kontakt schafft Umsatz. Umsatz schafft Mehrwert. Mehrwert schafft Empfehlung. Empfehlung schafft Präsenz.</p>
                     <p class="hero-subtitle">
                         Individuelles Webdesign, das dein Unternehmen professionell präsentiert und aus Besuchern Kunden macht.
                     </p>
@@ -578,5 +684,495 @@
             setTimeout(() => { formMessage.innerHTML = ''; }, 8000);
         }
     </script>
-</body>
+
+    <script>
+    (function () {
+        "use strict";
+
+        // === KONFIGURATION – hier Texte & Timings anpassen ===
+        var SEQUENCE = [
+            { words: ["Präsenz", "schafft", "Vertrauen"], next: "Kontakt" },
+            { words: ["Vertrauen", "schafft", "Kontakt"], next: "Umsatz" },
+            { words: ["Kontakt", "schafft", "Umsatz"], next: "Mehrwert" },
+            { words: ["Umsatz", "schafft", "Mehrwert"], next: "Empfehlung" },
+            { words: ["Mehrwert", "schafft", "Empfehlung"], next: "Präsenz" },
+            { words: ["Empfehlung", "schafft", "Präsenz"], next: "Vertrauen" }
+        ];
+
+        var TIMINGS = {
+            HOLD_DURATION: 1500,
+            FADE_DURATION: 2000,
+            MOVE_DURATION: 2400,
+            TYPE_DURATION: 2000
+        };
+
+        // Bézier-Kurven-Parameter für die Wanderung
+        var BEZIER = {
+            SWING_FACTOR: 1.4,      // Kontrollpunkte-Faktor für Ausschwingen
+            SAMPLE_POINTS: 60,      // Anzahl der Stützpunkte
+            EASING: "cubic-bezier(0.45, 0, 0.25, 1)"  // Sanfter Start/Ende
+        };
+
+        // Mobile-Optimierung: Konstanten für schmale Screens
+        var MOBILE = {
+            SAFETY_GAP: 0.25,       // Sicherheitsabstand rechts von "schafft" in em
+            MIN_SCALE: 0.85,        // Mindest-Skala für Schriftgröße bei Engpässen
+            RESIZE_DEBOUNCE: 150,   // Debounce-Zeit für Resize in ms
+            MAX_WIDTH: 430          // Grenze für mobile Anpassungen
+        };
+
+        var REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        // === DOM-Referenzen ===
+        var wrapper = document.getElementById("heroText");
+        var line1 = document.getElementById("heroLine1");
+        var line2 = document.getElementById("heroLine2");
+        var line3 = document.getElementById("heroLine3");
+        var wordFirst = line1.querySelector(".hero-word");
+        var wordLast = line3.querySelector(".hero-word");
+        var dotLast = line3.querySelector(".hero-dot");
+        var ariaLive = document.getElementById("heroAria");
+
+        var currentStep = 0;
+        var timer = null;
+        var isPaused = false;
+        var heroVisible = true;
+
+        // === Hilfen ===
+        function clearTimer() {
+            if (timer) {
+                clearTimeout(timer);
+                timer = null;
+            }
+        }
+
+        function resetWordStyles(el) {
+            el.removeAttribute("style");
+        }
+
+        function cancelAnimations() {
+            [wordFirst, wordLast, dotLast].forEach(function (el) {
+                if (el && el.style.transition) {
+                    el.style.transition = "none";
+                }
+                if (el && el.getAnimations) {
+                    el.getAnimations().forEach(function (a) { a.cancel(); });
+                }
+            });
+        }
+
+        function getPos(el) {
+            var wr = wrapper.getBoundingClientRect();
+            var r = el.getBoundingClientRect();
+            return { left: r.left - wr.left, top: r.top - wr.top, width: r.width, height: r.height };
+        }
+
+        function getSchafftWidth() {
+            return line2.querySelector(".hero-word").getBoundingClientRect().width;
+        }
+
+        function currentSentence() {
+            return SEQUENCE[currentStep].words.join(" ");
+        }
+
+        function setOpacity(el, val, dur) {
+            el.style.transition = "opacity " + (dur / 1000) + "s ease-in-out";
+            el.style.opacity = val;
+        }
+
+        function wait(ms) {
+            return new Promise(function (resolve) { setTimeout(resolve, ms); });
+        }
+
+        function waitForTransition(el, timeout) {
+            return new Promise(function (resolve) {
+                var settled = false;
+                function done() {
+                    if (settled) return;
+                    settled = true;
+                    el.removeEventListener("transitionend", done);
+                    clearTimeout(fallback);
+                    resolve();
+                }
+                el.addEventListener("transitionend", done);
+                var fallback = setTimeout(done, timeout || 2500);
+            });
+        }
+
+        // === Schritt ausführen ===
+        function runStep() {
+            if (isPaused) return;
+
+            // Alle laufenden Transitions/Animationen abbrechen (Bug B Behandlung)
+            cancelAnimations();
+
+            var step = SEQUENCE[currentStep];
+
+            // Wort 1 + Wort 3 + Punkt sauber initialisieren
+            resetWordStyles(wordFirst);
+            resetWordStyles(wordLast);
+            resetWordStyles(dotLast);
+            wordFirst.textContent = step.words[0];
+            wordFirst.dataset.word = step.words[0];
+            wordLast.textContent = step.words[2];
+            wordLast.dataset.word = step.words[2];
+            dotLast.textContent = ".";
+            wordFirst.style.opacity = "1";
+            wordLast.style.opacity = "1";
+            dotLast.style.opacity = "1";
+
+            if (ariaLive) {
+                ariaLive.textContent = step.words.join(" ") + ".";
+            }
+
+            timer = setTimeout(function () {
+                if (isPaused) return;
+                startTransition(step);
+            }, TIMINGS.HOLD_DURATION);
+        }
+
+        async function startTransition(step) {
+            if (isPaused) return;
+
+            try {
+                // === Vorbereitung: alle offenen Animationen canceln ===
+                cancelAnimations();
+
+                // === Schritt 1: Fade-out Wort 1 ===
+                // Nur wordFirst ausblenden, niemals wordLast!
+                // Punkt gleichzeitig mit ausblenden
+                wordFirst.style.transition = "opacity " + (TIMINGS.FADE_DURATION / 1000) + "s ease-in-out";
+                wordFirst.style.opacity = "0";
+                dotLast.style.transition = "opacity " + (TIMINGS.FADE_DURATION / 1000) + "s ease-in-out";
+                dotLast.style.opacity = "0";
+                await wait(TIMINGS.FADE_DURATION);
+                wordFirst.style.transition = "";
+                dotLast.style.transition = "";
+                // Punkt vor der Wanderung leeren, damit er nicht nachrückt
+                dotLast.textContent = "";
+                if (isPaused) return;
+
+                // === Schritt 2: Wort 3 wandert (dreiteilig) ===
+                await moveWord3(step);
+                if (isPaused) return;
+
+                // === Schritt 3: Übernahme in exakter Reihenfolge (synchron) ===
+                // a) Alle offenen Animationen canceln
+                cancelAnimations();
+
+                // b) wordFirst auf "none" setzen
+                wordFirst.style.transition = "none";
+
+                // c) Wort von wordLast nach wordFirst kopieren
+                wordFirst.textContent = wordLast.textContent;
+                wordFirst.dataset.word = wordLast.dataset.word;
+
+                // d) wordFirst dauerhaft sichtbar machen
+                wordFirst.style.opacity = "1";
+
+                // e) wordLast und Punkt leeren (ohne Übergang)
+                resetWordStyles(wordLast);
+                wordLast.textContent = "";
+                wordLast.dataset.word = "";
+                resetWordStyles(dotLast);
+                dotLast.textContent = "";
+                wordLast.style.transition = "none";
+                wordLast.style.opacity = "0";
+                dotLast.style.opacity = "0";
+
+                // f) Reflow erzwingen, damit "none" greift
+                void wordFirst.offsetWidth;
+                void wordLast.offsetWidth;
+
+                // === Schritt 4: Neues Wort 3 + Punkt einblenden ===
+                var nextWord = step.next;
+                wordLast.textContent = nextWord;
+                wordLast.dataset.word = nextWord;
+                dotLast.textContent = ".";
+                resetWordStyles(wordLast);
+                resetWordStyles(dotLast);
+                wordLast.style.transition = "none";
+                wordLast.style.opacity = "0";
+                dotLast.style.opacity = "0";
+
+                void wordLast.offsetWidth;
+                void dotLast.offsetWidth;
+
+                // Fade-in starten: transition setzen, dann opacity 1
+                wordLast.style.transition = "opacity " + (TIMINGS.TYPE_DURATION / 1000) + "s ease-in-out";
+                wordLast.style.opacity = "1";
+                dotLast.style.transition = "opacity " + (TIMINGS.TYPE_DURATION / 1000) + "s ease-in-out";
+                dotLast.style.opacity = "1";
+                await wait(TIMINGS.TYPE_DURATION);
+                if (isPaused) return;
+
+                // Transition nach Fertig entfernen (nicht standing lassen)
+                wordLast.style.transition = "";
+                dotLast.style.transition = "";
+
+                finishStep();
+            } catch (e) {
+                console.error("Hero animation error:", e);
+                finishStep();
+            }
+        }
+
+        async function moveWord3(step) {
+            if (isPaused) return;
+            try {
+                // FLIP: First – Startposition von Wort 3 messen
+                var w3Start = getPos(wordLast);
+
+                // Temporär wordFirst auf Zieltext setzen für genaue Messung
+                // (wordFirst ist in diesem Moment opacity 0, also unsichtbar)
+                var originalWord1Text = wordFirst.textContent;
+                var targetWord = step.words[2];
+                wordFirst.textContent = targetWord;
+                wordFirst.dataset.word = targetWord;
+                void wordFirst.offsetWidth; // Reflow für korrekte Messung
+                var w1Pos = getPos(wordFirst);
+                // Original-Text wiederherstellen (wird in Schritt 3 ohnehin gesetzt)
+                wordFirst.textContent = originalWord1Text;
+                wordFirst.dataset.word = originalWord1Text;
+
+                var schafftWidth = getSchafftWidth();
+                var wrapperW = wrapper.getBoundingClientRect().width;
+
+                // Wort 3 auf absolute Position fixieren (visuell kein Sprung)
+                resetWordStyles(wordLast);
+                wordLast.style.position = "absolute";
+                wordLast.style.left = w3Start.left + "px";
+                wordLast.style.top = w3Start.top + "px";
+                wordLast.style.width = w3Start.width + "px";
+                wordLast.style.zIndex = "10";
+                wordLast.style.opacity = "1";
+                // GPU-Beschleunigung während der Wanderung
+                wordLast.style.willChange = "transform";
+
+                // Ausweichbahn: rechts von "schafft", auf Viewport begrenzen
+                var rootFont = parseFloat(getComputedStyle(document.documentElement).fontSize);
+                var gap = Math.min(rootFont * MOBILE.SAFETY_GAP, 40);
+                var laneWidth = Math.min(schafftWidth + gap, Math.max(0, wrapperW - w3Start.left - 20));
+                var laneX = w1Pos.left + laneWidth;
+
+                // Gesamte Verschiebung von Start zu Ziel (P3)
+                var dxTotal = w1Pos.left - w3Start.left;
+                var dyTotal = w1Pos.top - w3Start.top;
+
+                // Bézier-Kurven-Parameter (P0 = Start, P3 = Ziel)
+                var P0 = { x: 0, y: 0 };
+                var P3 = { x: dxTotal, y: dyTotal };
+                // Kontrollpunkte für Ausschwingen rechts an "schafft" vorbei
+                // CSS-Variablen für responsive Verhalten verwenden
+                var swingFactor = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hero-bezier-k')) || BEZIER.SWING_FACTOR;
+                var swingX = (laneX - w3Start.left) * swingFactor;
+                // Bei schmalen Containern Begrenzen, damit kein horizontales Scrollen
+                var maxSwing = Math.max(0, wrapperW - w3Start.left - w3Start.width - 20);
+                swingX = Math.min(swingX, maxSwing);
+                var P1 = { x: swingX, y: 0 };
+                var P2 = { x: swingX, y: dyTotal };
+
+                // Keyframes über kubische Bézier-Formel berechnen
+                var N = BEZIER.SAMPLE_POINTS;
+                var keyframes = [];
+                for (var i = 0; i <= N; i++) {
+                    var t = i / N;
+                    var t1 = 1 - t;
+                    var t1_3 = t1 * t1 * t1;
+                    var t1_2_t = 3 * t1 * t1 * t;
+                    var t_t2_2 = 3 * t * t * t1;
+                    var t3 = t * t * t;
+                    var bx = t1_3 * P0.x + t1_2_t * P1.x + t_t2_2 * P2.x + t3 * P3.x;
+                    var by = t1_3 * P0.y + t1_2_t * P1.y + t_t2_2 * P2.y + t3 * P3.y;
+                    keyframes.push({
+                        offset: t,
+                        transform: "translate(" + bx + "px, " + by + "px)"
+                    });
+                }
+                // Ersten und letzten Keyframe explizit sichern
+                keyframes[0].offset = 0;
+                keyframes[0].transform = "translate(0px, 0px)";
+                keyframes[N].offset = 1;
+                keyframes[N].transform = "translate(" + dxTotal + "px, " + dyTotal + "px)";
+
+                // WAAPI-Animation mit durchgehendem Easing starten
+                var anim = wordLast.animate(keyframes, {
+                    duration: TIMINGS.MOVE_DURATION,
+                    easing: BEZIER.EASING,
+                    fill: "forwards"
+                });
+
+                // Auf Fertigstellung warten (oder Pause)
+                await Promise.race([
+                    new Promise(function (resolve) {
+                        anim.onfinish = function () {
+                            // Endzustand per Inline-Style festschreiben
+                            wordLast.style.transform = "translate(" + dxTotal + "px, " + dyTotal + "px)";
+                            anim.cancel();
+                            resolve();
+                        };
+                    }),
+                    new Promise(function (resolve) {
+                        // Fallback-Timer, falls onfinish nicht feuert
+                        setTimeout(resolve, TIMINGS.MOVE_DURATION + 500);
+                    })
+                ]);
+                if (isPaused) return;
+
+                // Reset aller Inline-Styles nach der Bewegung
+                resetWordStyles(wordLast);
+                wordLast.style.opacity = "1";
+            } catch (e) {
+                console.error("moveWord3 error:", e);
+                // Bei Fehler sichergestellt: Wort auf Zielposition setzen
+                resetWordStyles(wordLast);
+                wordLast.style.opacity = "1";
+            }
+        }
+
+        function finishStep() {
+            if (isPaused) return;
+            try {
+                timer = setTimeout(function () {
+                    if (isPaused) return;
+                    currentStep = (currentStep + 1) % SEQUENCE.length;
+                    runStep();
+                }, TIMINGS.HOLD_DURATION);
+            } catch (e) {
+                console.error("finishStep error:", e);
+                currentStep = (currentStep + 1) % SEQUENCE.length;
+                runStep();
+            }
+        }
+
+        // === Pause / Play ===
+        function pause() {
+            isPaused = true;
+            clearTimer();
+        }
+
+        function play() {
+            if (isPaused) {
+                isPaused = false;
+                runStep();
+            }
+        }
+
+        // === Touch: Tap springt zum nächsten Schritt (nur während Haltezeit) ===
+        wrapper.addEventListener("click", function () {
+            if (REDUCED_MOTION) return;
+            // Nur during Haltezeit (wenn kein Timer für Transition läuft)
+            if (timer) {
+                clearTimer();
+                currentStep = (currentStep + 1) % SEQUENCE.length;
+                runStep();
+            }
+        });
+
+        // === Visibility / IntersectionObserver ===
+        document.addEventListener("visibilitychange", function () {
+            if (document.hidden) {
+                pause();
+            } else {
+                play();
+            }
+        });
+
+        if ("IntersectionObserver" in window) {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        heroVisible = true;
+                        play();
+                    } else {
+                        heroVisible = false;
+                        pause();
+                    }
+                });
+            }, { threshold: 0.1 });
+            observer.observe(wrapper.closest(".hero"));
+        }
+
+        // === Resize und Orientation-Change: Positionen neu messen ===
+        var resizeTimer = null;
+        var lastWrapperWidth = wrapper.getBoundingClientRect().width;
+
+        function handleResize() {
+            if (resizeTimer) clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                var newWidth = wrapper.getBoundingClientRect().width;
+                // Nur reagieren, wenn sich die Container-Breite tatsächlich geändert hat
+                if (Math.abs(newWidth - lastWrapperWidth) < 1) return;
+                lastWrapperWidth = newWidth;
+
+                // Laufende Animationen sauber abbrechen
+                [wordFirst, wordLast, dotLast].forEach(function (el) {
+                    if (el && el.getAnimations) {
+                        el.getAnimations().forEach(function (a) { a.cancel(); });
+                    }
+                });
+                cancelAnimations();
+
+                // Ruhezustand wiederherstellen: alle Wörter und Punkt sichtbar
+                resetWordStyles(wordFirst);
+                resetWordStyles(wordLast);
+                resetWordStyles(dotLast);
+                wordFirst.style.opacity = "1";
+                wordLast.style.opacity = "1";
+                dotLast.style.opacity = "1";
+
+                if (!isPaused && heroVisible) {
+                    clearTimer();
+                    runStep();
+                }
+            }, MOBILE.RESIZE_DEBOUNCE);
+        }
+
+        window.addEventListener("resize", handleResize);
+        window.addEventListener("orientationchange", function () {
+            // Orientation-Change löst auch resize aus, aber wir warten kurz
+            setTimeout(handleResize, 100);
+        });
+
+        // === Start: Warten bis Schrift geladen ist (wichtig für Mobile) ===
+        function startAnimation() {
+            if (REDUCED_MOTION) {
+                var step = 0;
+                function fadeStep() {
+                    if (isPaused) return;
+                    var s = SEQUENCE[step];
+                    resetWordStyles(wordFirst);
+                    resetWordStyles(wordLast);
+                    resetWordStyles(dotLast);
+                    wordFirst.textContent = s.words[0];
+                    wordFirst.dataset.word = s.words[0];
+                    wordLast.textContent = s.words[2];
+                    wordLast.dataset.word = s.words[2];
+                    dotLast.textContent = ".";
+                    wordFirst.style.opacity = "1";
+                    wordLast.style.opacity = "1";
+                    dotLast.style.opacity = "1";
+                    if (ariaLive) {
+                        ariaLive.textContent = s.words.join(" ") + ".";
+                    }
+                    step = (step + 1) % SEQUENCE.length;
+                    timer = setTimeout(fadeStep, TIMINGS.HOLD_DURATION);
+                }
+                fadeStep();
+            } else {
+                runStep();
+            }
+        }
+
+        // Warten, bis alle Schriftarten geladen sind (verhindert falsche Wortbreiten auf Mobile)
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(function () {
+                startAnimation();
+            });
+        } else {
+            startAnimation();
+        }
+    })();
+    </script>
+    </body>
 </html>
