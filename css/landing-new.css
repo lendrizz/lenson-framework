@@ -105,6 +105,7 @@ a:hover {
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--color-border-light);
     transition: var(--transition);
+    height: 90px; /* Explicit height for consistency */
 }
 
 .nav-header.scrolled {
@@ -271,8 +272,8 @@ a:hover {
 
 /* Hero Section */
 .hero {
-    padding: 200px 0 140px;
-    min-height: 100vh;
+    padding: 140px 0 80px;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
 }
@@ -1087,7 +1088,7 @@ a:hover {
 @media (max-width: 968px) {
     .nav-menu {
         position: absolute;
-        top: 90px;
+        top: 70px;
         left: 0;
         right: 0;
         flex-direction: column;
@@ -1169,6 +1170,15 @@ a:hover {
     
     .nav-container {
         height: 70px;
+    }
+    
+    .nav-header {
+        height: 70px;
+    }
+    
+    /* Mobile scroll-padding-top matches navbar height */
+    html {
+        scroll-padding-top: 70px;
     }
     
     .nav-logo img {

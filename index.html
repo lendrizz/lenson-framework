@@ -31,9 +31,9 @@
 </head>
 <body>
     <!-- Navigation -->
-    <header class="nav-header liquid-nav-header" id="navHeader">
-        <nav class="nav-container liquid-nav-container">
-            <a href="#" class="nav-logo liquid-nav-logo">
+    <header class="nav-header" id="navHeader">
+        <nav class="nav-container">
+            <a href="#" class="nav-logo">
                 <img src="assets/images/logo.png" alt="Lenson Consulting Logo">
                 <div class="nav-logo-text">
                     <span class="nav-logo-main">Lenson</span>
@@ -41,31 +41,27 @@
                 </div>
             </a>
             
-            <div class="liquid-nav-pill">
-                <div class="liquid-nav-glass"></div>
-                <div class="liquid-nav-drop"></div>
-                <ul class="nav-menu liquid-nav-menu">
-                    <li><a href="#webdesign" class="nav-link liquid-nav-link">Webdesign</a></li>
-                    <li><a href="#social" class="nav-link liquid-nav-link">Social Media</a></li>
-                    <li><a href="#gastronomie" class="nav-link liquid-nav-link">Gastronomie</a></li>
-                    <li><a href="#faq" class="nav-link liquid-nav-link">FAQ</a></li>
-                    <li><a href="#kontakt" class="nav-link liquid-nav-link">Kontakt</a></li>
-                    <li class="nav-legal-dropdown">
-                        <button class="nav-legal-toggle" aria-label="Rechtliches Menü">
-                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect y="0" width="20" height="2" rx="1" fill="currentColor"/>
-                                <rect y="7" width="20" height="2" rx="1" fill="currentColor"/>
-                                <rect y="14" width="20" height="2" rx="1" fill="currentColor"/>
-                            </svg>
-                        </button>
-                        <ul class="nav-legal-menu">
-                            <li><a href="datenschutz.html">Datenschutz</a></li>
-                            <li><a href="impressum.html">Impressum</a></li>
-                            <li><a href="agb.html">AGB</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+            <ul class="nav-menu">
+                <li><a href="#webdesign" class="nav-link">Webdesign</a></li>
+                <li><a href="#social" class="nav-link">Social Media</a></li>
+                <li><a href="#gastronomie" class="nav-link">Gastronomie</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+                <li class="nav-legal-dropdown">
+                    <button class="nav-legal-toggle" aria-label="Rechtliches Menü">
+                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0" width="20" height="2" rx="1" fill="currentColor"/>
+                            <rect y="7" width="20" height="2" rx="1" fill="currentColor"/>
+                            <rect y="14" width="20" height="2" rx="1" fill="currentColor"/>
+                        </svg>
+                    </button>
+                    <ul class="nav-legal-menu">
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="agb.html">AGB</a></li>
+                    </ul>
+                </li>
+            </ul>
             
             <button class="nav-toggle" aria-label="Menü öffnen" id="navToggle">
                 <span></span>
@@ -463,10 +459,14 @@
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const header = document.getElementById('navHeader');
+            const navMenu = document.querySelector('.nav-menu');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
+            }
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
             }
         });
 
