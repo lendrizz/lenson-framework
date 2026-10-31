@@ -1147,6 +1147,18 @@ a:hover {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
+    
+    /* Mobile: Images full width, no cropping */
+    .webdesign-image {
+        height: auto;
+        min-height: 250px;
+    }
+    
+    .webdesign-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
 }
 
 @media (max-width: 640px) {
@@ -1193,6 +1205,7 @@ a:hover {
     .hero-actions .btn {
         width: 100%;
         justify-content: center;
+        min-height: 48px;
     }
     
     .hero-mockup {
@@ -1202,6 +1215,23 @@ a:hover {
     .hero-mockup-content {
         padding: 24px 20px;
         min-height: 300px;
+    }
+    
+    /* Mobile hero visual: image scaling with contain */
+    .hero-visual {
+        order: 2;
+    }
+    
+    .hero-mockup {
+        height: 250px;
+        margin-top: 30px;
+    }
+    
+    .hero-mockup img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 12px;
     }
     
     .section {
@@ -1217,7 +1247,14 @@ a:hover {
     }
     
     .webdesign-image {
-        height: 300px;
+        height: auto;
+        min-height: 200px;
+    }
+    
+    .webdesign-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
     }
     
     .contact-section {
@@ -1231,6 +1268,7 @@ a:hover {
     .form-input,
     .form-textarea {
         padding: 12px 14px;
+        font-size: 16px; /* Prevents zoom on iOS */
     }
     
     .footer-grid {
@@ -1247,6 +1285,66 @@ a:hover {
     .footer-legal {
         flex-direction: column;
         gap: 8px;
+    }
+    
+    /* Improved touch targets for FAQ */
+    .faq-question {
+        font-size: 1rem;
+        padding: 16px 0;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .faq-answer {
+        font-size: 0.95rem;
+        padding: 0 0 16px;
+    }
+    
+    .faq-cta h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* Improved form styling for mobile */
+    .form-checkbox {
+        margin-bottom: 24px;
+    }
+    
+    .form-checkbox input {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+    }
+    
+    .form-checkbox label {
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+    
+    /* VCard mobile improvements */
+    .vcard-content {
+        padding: 24px 20px 20px;
+    }
+    
+    .vcard-name {
+        font-size: 1.3rem;
+    }
+    
+    .vcard-actions {
+        flex-direction: column;
+    }
+    
+    .vcard-btn {
+        justify-content: center;
+        width: 100%;
+        min-height: 48px;
+    }
+    
+    /* Better button spacing on mobile */
+    .btn {
+        min-height: 48px;
+        padding: 14px 28px;
+        font-size: 0.95rem;
     }
 }
 
