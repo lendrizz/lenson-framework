@@ -692,18 +692,17 @@
         // === KONFIGURATION – hier Texte & Timings anpassen ===
         var SEQUENCE = [
             { words: ["Präsenz", "schafft", "Vertrauen"], next: "Kontakt" },
-            { words: ["Vertrauen", "schafft", "Kontakt"], next: "Umsatz" },
-            { words: ["Kontakt", "schafft", "Umsatz"], next: "Mehrwert" },
-            { words: ["Umsatz", "schafft", "Mehrwert"], next: "Empfehlung" },
+            { words: ["Vertrauen", "schafft", "Kontakt"], next: "Mehrwert" },
+            { words: ["Kontakt", "schafft", "Mehrwert"], next: "Empfehlung" },
             { words: ["Mehrwert", "schafft", "Empfehlung"], next: "Präsenz" },
             { words: ["Empfehlung", "schafft", "Präsenz"], next: "Vertrauen" }
         ];
 
         var TIMINGS = {
-            HOLD_DURATION: 1500,
-            FADE_DURATION: 2000,
-            MOVE_DURATION: 2400,
-            TYPE_DURATION: 2000
+            HOLD_DURATION: 1000,
+            FADE_DURATION: 1500,
+            MOVE_DURATION: 2000,
+            TYPE_DURATION: 1500
         };
 
         // Bézier-Kurven-Parameter für die Wanderung
