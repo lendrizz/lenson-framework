@@ -1,3 +1,13 @@
 User-agent: *
 Allow: /
+Disallow: /fragebogen.html
+Disallow: /php/
+Disallow: /uploads/
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
 Sitemap: https://lensonconsulting.de/sitemap.xml
